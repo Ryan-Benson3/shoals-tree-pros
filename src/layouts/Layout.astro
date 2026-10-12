@@ -7,10 +7,11 @@ interface Props {
   description: string;
   path?: string; // canonical path, e.g. '/alabama/florence/'
   ogType?: string;
+  ogImage?: string; // path like '/images/hero.jpg'
   jsonLd?: Record<string, unknown>[];
 }
 
-const { title, description, path = '/', ogType = 'website', jsonLd = [] } = Astro.props;
+const { title, description, path = '/', ogType = 'website', ogImage = '/images/hero.jpg', jsonLd = [] } = Astro.props;
 const site = Astro.site ?? new URL('https://shoals-tree-pros.pages.dev');
 const canonical = new URL(path, site).href;
 ---
@@ -31,7 +32,8 @@ const canonical = new URL(path, site).href;
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
     <meta property="og:site_name" content="Shoals Tree Pros" />
-    <meta name="twitter:card" content="summary" />
+    <meta property="og:image" content={new URL(ogImage, site).href} />
+    <meta name="twitter:card" content="summary_large_image" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />

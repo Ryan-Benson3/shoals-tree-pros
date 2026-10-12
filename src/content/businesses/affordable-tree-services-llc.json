@@ -13,8 +13,22 @@
   "rating": 4.7,
   "reviewCount": 0,
   "ratingSource": "Google (via directory data)",
-  "services": ["tree-trimming", "stump-grinding", "tree-removal", "storm-cleanup", "emergency", "lot-clearing", "crane"],
-  "serviceArea": ["Florence", "Killen", "Cherokee", "Tuscumbia", "Muscle Shoals"],
+  "services": [
+    "tree-trimming",
+    "stump-grinding",
+    "tree-removal",
+    "storm-cleanup",
+    "emergency",
+    "lot-clearing",
+    "crane"
+  ],
+  "serviceArea": [
+    "Florence",
+    "Killen",
+    "Cherokee",
+    "Tuscumbia",
+    "Muscle Shoals"
+  ],
   "yearsInBusiness": 15,
   "insuredClaim": "Claims licensed & insured with workers comp (per third-party directory listing)",
   "certifiedClaim": "Site displays ISA and Alabama Urban Forestry Association logos; claims certified arborists",
@@ -23,8 +37,18 @@
   "sourceLabel": "byebyetree.com",
   "sourceUrl": "https://www.byebyetree.com/",
   "sources": [
-    { "label": "Company website", "url": "https://www.byebyetree.com/" },
-    { "label": "BBB profile (A+ accredited)", "url": "https://www.bbb.org/us/al/tuscumbia/profile/tree-service/affordable-tree-services-llc-0513-900124435" },
-    { "label": "Facebook page", "url": "https://www.facebook.com/AffordableTreeServicesLlc/" }
-  ]
+    {
+      "label": "Company website",
+      "url": "https://www.byebyetree.com/"
+    },
+    {
+      "label": "BBB profile (A+ accredited)",
+      "url": "https://www.bbb.org/us/al/tuscumbia/profile/tree-service/affordable-tree-services-llc-0513-900124435"
+    },
+    {
+      "label": "Facebook page",
+      "url": "https://www.facebook.com/AffordableTreeServicesLlc/"
+    }
+  ],
+  "photoCredit": "Image from byebyetree.com — <a href='https://www.byebyetree.com/' target='_blank' rel='nofollow noopener'>view source</a>"
 }

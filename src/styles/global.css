@@ -79,11 +79,36 @@ nav.main-nav a:hover { color: var(--ink); border-color: var(--gold); }
 .hero {
   position: relative; overflow: hidden;
   padding-block: clamp(3.6rem, 8vw, 6.5rem) clamp(3rem, 6vw, 4.5rem);
+}
+.hero::before {
+  content: ''; position: absolute; inset: 0; z-index: -1; pointer-events: none;
   background:
     radial-gradient(620px circle at var(--mx, 72%) var(--my, 16%), rgba(30, 122, 63, 0.12), transparent 62%),
     radial-gradient(500px circle at var(--mx, 72%) var(--my, 16%), rgba(242, 182, 50, 0.16), transparent 70%);
   transition: background 0.2s linear;
 }
+.hero .photo {
+  position: absolute; inset: 0; z-index: -2;
+}
+.hero .photo img {
+  width: 100%; height: 100%; object-fit: cover; object-position: 72% 30%;
+}
+.hero .photo::after {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(100deg, rgba(249, 250, 246, 0.98) 0%, rgba(249, 250, 246, 0.93) 42%, rgba(249, 250, 246, 0.42) 78%, rgba(249, 250, 246, 0.25) 100%);
+}
+@media (max-width: 860px) {
+  .hero .photo img { object-position: 60% 25%; }
+  .hero .photo::after {
+    background: linear-gradient(180deg, rgba(249, 250, 246, 0.94) 0%, rgba(249, 250, 246, 0.85) 55%, rgba(249, 250, 246, 0.55) 100%);
+  }
+}
+.hero .photo .credit {
+  position: absolute; right: 0.8rem; bottom: 0.5rem; z-index: 1;
+  font-size: 0.7rem; color: rgba(255, 255, 255, 0.85);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+}
+.hero .photo .credit a { color: inherit; }
 .hero .kicker {
   display: inline-flex; align-items: center; gap: 0.5rem;
   font-size: 0.85rem; font-weight: 600; letter-spacing: 0.09em; text-transform: uppercase;
@@ -271,6 +296,23 @@ section { padding-block: clamp(3.6rem, 7.5vw, 6rem); }
 .group-head h2 { font-size: 1.35rem; }
 .group-head .count { font-size: 0.85rem; font-weight: 600; color: var(--soft); background: rgba(13, 31, 20, 0.06); padding: 0.2rem 0.6rem; border-radius: 999px; }
 .group-head .note { font-size: 0.85rem; color: var(--soft); }
+
+/* ---------- Profile photo / monogram ---------- */
+.biz-photo {
+  border: 2px solid var(--ink); border-radius: var(--radius); overflow: hidden;
+  box-shadow: 8px 8px 0 rgba(13, 31, 20, 0.08); background: var(--card);
+}
+.biz-photo img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; display: block; }
+.biz-photo.monogram {
+  aspect-ratio: 16 / 9; display: grid; place-items: center;
+  background: var(--ink); color: #eef3ec;
+}
+.biz-photo.monogram .letters {
+  font-family: var(--font-head); font-weight: 700; font-size: clamp(2.6rem, 6vw, 4rem); letter-spacing: 0.02em;
+}
+.biz-photo.monogram .accent { color: var(--gold); }
+.photo-credit { font-size: 0.78rem; color: var(--soft); margin-top: 0.5rem; }
+.photo-credit a { color: var(--green); }
 
 /* ---------- Profile page ---------- */
 .profile-head { display: grid; gap: 2rem; grid-template-columns: 1.4fr 1fr; align-items: start; }

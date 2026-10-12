@@ -13,8 +13,15 @@
   "rating": 0,
   "reviewCount": 0,
   "ratingSource": "",
-  "services": ["tree-trimming", "tree-removal", "firewood"],
-  "serviceArea": ["Florence", "Lauderdale County"],
+  "services": [
+    "tree-trimming",
+    "tree-removal",
+    "firewood"
+  ],
+  "serviceArea": [
+    "Florence",
+    "Lauderdale County"
+  ],
   "yearsInBusiness": 0,
   "insuredClaim": "",
   "certifiedClaim": "",
@@ -23,8 +30,18 @@
   "sourceLabel": "Directory listings",
   "sourceUrl": "https://www.mapquest.com/us/alabama/brinks-outdoor-services-352781065",
   "sources": [
-    { "label": "MapQuest listing", "url": "https://www.mapquest.com/us/alabama/brinks-outdoor-services-352781065" },
-    { "label": "FMCSA carrier record", "url": "https://www.quicktransportsolutions.com/truckingcompany/alabama/brinks-outdoor-services-inc-usdot-3115087.php" },
-    { "label": "Brink's Forest Products site", "url": "https://www.brinksforestproducts.com" }
-  ]
+    {
+      "label": "MapQuest listing",
+      "url": "https://www.mapquest.com/us/alabama/brinks-outdoor-services-352781065"
+    },
+    {
+      "label": "FMCSA carrier record",
+      "url": "https://www.quicktransportsolutions.com/truckingcompany/alabama/brinks-outdoor-services-inc-usdot-3115087.php"
+    },
+    {
+      "label": "Brink's Forest Products site",
+      "url": "https://www.brinksforestproducts.com"
+    }
+  ],
+  "photoCredit": "Brand image from brinksforestproducts.com — <a href='https://www.brinksforestproducts.com' target='_blank' rel='nofollow noopener'>view source</a>"
 }

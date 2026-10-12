@@ -13,8 +13,25 @@
   "rating": 4.8,
   "reviewCount": 186,
   "ratingSource": "Google (via Birdeye)",
-  "services": ["tree-trimming", "stump-grinding", "tree-removal", "storm-cleanup", "emergency"],
-  "serviceArea": ["Florence", "Muscle Shoals", "Sheffield", "Tuscumbia", "Athens", "Rogersville", "Moulton", "Russellville", "Waterloo", "Lexington"],
+  "services": [
+    "tree-trimming",
+    "stump-grinding",
+    "tree-removal",
+    "storm-cleanup",
+    "emergency"
+  ],
+  "serviceArea": [
+    "Florence",
+    "Muscle Shoals",
+    "Sheffield",
+    "Tuscumbia",
+    "Athens",
+    "Rogersville",
+    "Moulton",
+    "Russellville",
+    "Waterloo",
+    "Lexington"
+  ],
   "yearsInBusiness": 12,
   "insuredClaim": "",
   "certifiedClaim": "",
@@ -23,9 +40,22 @@
   "sourceLabel": "treeproinc.com",
   "sourceUrl": "https://www.treeproinc.com/",
   "sources": [
-    { "label": "Company website", "url": "https://www.treeproinc.com/" },
-    { "label": "Stump grinding page", "url": "https://www.treeproinc.com/stump-grinding" },
-    { "label": "FMCSA carrier record (USDOT 3078631)", "url": "https://safer.fmcsa.dot.gov/query.asp?query_param=USDOT&query_string=3078631&query_type=queryCarrierSnapshot&searchtype=ANY" },
-    { "label": "Birdeye reviews (Google-sourced)", "url": "https://reviews.birdeye.com/tree-professional-inc-167533864141483" }
-  ]
+    {
+      "label": "Company website",
+      "url": "https://www.treeproinc.com/"
+    },
+    {
+      "label": "Stump grinding page",
+      "url": "https://www.treeproinc.com/stump-grinding"
+    },
+    {
+      "label": "FMCSA carrier record (USDOT 3078631)",
+      "url": "https://safer.fmcsa.dot.gov/query.asp?query_param=USDOT&query_string=3078631&query_type=queryCarrierSnapshot&searchtype=ANY"
+    },
+    {
+      "label": "Birdeye reviews (Google-sourced)",
+      "url": "https://reviews.birdeye.com/tree-professional-inc-167533864141483"
+    }
+  ],
+  "photoCredit": "Image from treeproinc.com — <a href='https://www.treeproinc.com/' target='_blank' rel='nofollow noopener'>view source</a>"
 }

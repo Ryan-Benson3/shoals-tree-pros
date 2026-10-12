@@ -13,8 +13,22 @@
   "rating": 0,
   "reviewCount": 0,
   "ratingSource": "",
-  "services": ["tree-trimming", "stump-grinding", "tree-removal", "storm-cleanup", "emergency", "lot-clearing"],
-  "serviceArea": ["Tuscumbia", "Florence", "Muscle Shoals", "Sheffield", "Lauderdale County", "Colbert County"],
+  "services": [
+    "tree-trimming",
+    "stump-grinding",
+    "tree-removal",
+    "storm-cleanup",
+    "emergency",
+    "lot-clearing"
+  ],
+  "serviceArea": [
+    "Tuscumbia",
+    "Florence",
+    "Muscle Shoals",
+    "Sheffield",
+    "Lauderdale County",
+    "Colbert County"
+  ],
   "yearsInBusiness": 0,
   "insuredClaim": "Claims licensed & insured (per company website)",
   "certifiedClaim": "",
@@ -23,7 +37,14 @@
   "sourceLabel": "transformyourproperty.com",
   "sourceUrl": "https://www.transformyourproperty.com/",
   "sources": [
-    { "label": "Company website", "url": "https://www.transformyourproperty.com/" },
-    { "label": "Land clearing page", "url": "https://www.transformyourproperty.com/services/land-clearing" }
-  ]
+    {
+      "label": "Company website",
+      "url": "https://www.transformyourproperty.com/"
+    },
+    {
+      "label": "Land clearing page",
+      "url": "https://www.transformyourproperty.com/services/land-clearing"
+    }
+  ],
+  "photoCredit": ""
 }

@@ -3,6 +3,7 @@ import Layout from '../../layouts/Layout.astro';
 import BusinessCard from '../../components/BusinessCard.astro';
 import { cityBySlug } from '../../data/cities';
 import { serviceLabel, allBusinesses, type BizEntry } from '../../lib/biz';
+import fs from 'node:fs';
 
 export async function getStaticPaths() {
   const businesses = await allBusinesses();
@@ -13,6 +14,17 @@ const { business } = Astro.props as { business: BizEntry };
 const d = business.data;
 const site = Astro.site?.href ?? '';
 const tel = d.phone.replace(/[^0-9+]/g, '');
+const hasPhone = tel.length > 0;
+
+// Real photo from the business's own web presence, if we have one on file
+const photoPath = `/images/profiles/${business.id}.jpg`;
+const hasPhoto = fs.existsSync(`public${photoPath}`);
+const initials = d.name
+  .split(/\s+/)
+  .filter((w) => /^[A-Za-z0-9]/.test(w))
+  .slice(0, 2)
+  .map((w) => w[0].toUpperCase())
+  .join('');
 
 const others = (await allBusinesses())
   .filter(
@@ -36,7 +48,6 @@ const crumbCity = cityPage
 
 const title = `${d.name} — ${d.city}, AL Tree Service | Shoals Tree Pros`;
 const description = `${d.name} is a tree service listed in the Shoals Tree Pros directory${d.address ? `, based at ${d.address}, ${d.city}, ${d.state}` : `, serving ${d.city}, ${d.state}`}. ${serviceLabel(d.services[0] ?? 'tree work')}${d.services.length > 1 ? ' and more' : ''}. Source-backed listing${d.phone ? ` — call ${d.phone}` : ''}.`;
-const hasPhone = tel.length > 0;
 
 const jsonLd = [
   {
@@ -48,6 +59,7 @@ const jsonLd = [
     areaServed: d.serviceArea.length ? d.serviceArea : [d.city],
     ...(d.website ? { url: d.website } : {}),
     ...(d.reviewCount > 0 ? { aggregateRating: { '@type': 'AggregateRating', ratingValue: d.rating, reviewCount: d.reviewCount } } : {}),
+    ...(hasPhoto ? { image: `${site.replace(/\/$/, '')}${photoPath}` } : {}),
     description: `Tree service listed on Shoals Tree Pros, an independent directory for the Shoals, Alabama. Details compiled from public sources — verify before hiring.`,
   },
   {
@@ -63,7 +75,7 @@ const jsonLd = [
 ];
 ---
 
-<Layout title={title} description={description} path={`/business/${business.id}/`} jsonLd={jsonLd}>
+<Layout title={title} description={description} path={`/business/${business.id}/`} ogType="profile" ogImage={hasPhoto ? photoPath : '/images/hero.jpg'} jsonLd={jsonLd}>
   <div class="wrap">
     <nav class="crumbs" aria-label="Breadcrumb" set:html={`<a href="/">Home</a> <span class="sep">/</span> ${crumbCity}<span class="here">${d.name}</span>`} />
   </div>
@@ -72,6 +84,21 @@ const jsonLd = [
     <div class="wrap">
       <p class="kicker">{d.city}, {d.state} · {d.county} County</p>
       <h1>{d.name}</h1>
+      {hasPhoto ? (
+        <div style="margin-top: 1.4rem; max-width: 720px;">
+          <div class="biz-photo">
+            <img src={photoPath} alt={`${d.name} — image from the business's own website`} loading="lazy" />
+          </div>
+          <p class="photo-credit" set:html={d.photoCredit || `Image from ${d.name}'s own website — contact us if it should be updated.`} />
+        </div>
+      ) : (
+        <div style="margin-top: 1.4rem; max-width: 720px;">
+          <div class="biz-photo monogram" aria-hidden="true">
+            <span class="letters">{initials.slice(0, 1)}<span class="accent">{initials.slice(1)}</span></span>
+          </div>
+          <p class="photo-credit">No public photo on file — this business has no website we could pull from. Owners can <a href="/about/#claim">claim this listing</a> to add one.</p>
+        </div>
+      )}
       <div class="badge-row" style="margin-top: 1rem;">
         {d.services.map((s) => <span class="badge svc">{serviceLabel(s)}</span>)}
       </div>

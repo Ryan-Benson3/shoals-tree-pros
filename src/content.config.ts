@@ -30,6 +30,7 @@ const businesses = defineCollection({
     insuredClaim: z.string().default(''),
     certifiedClaim: z.string().default(''),
     summary: z.string().default(''),
+    photoCredit: z.string().default(''),
     confidence: z.enum(['provider-verified', 'directory-listed', 'needs-confirmation']).default('directory-listed'),
     sourceLabel: z.string(),
     sourceUrl: z.string().default(''),
