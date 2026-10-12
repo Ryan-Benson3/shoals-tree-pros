@@ -68,7 +68,7 @@ const jsonLd = [
           <input
             id="city-search"
             type="text"
-            placeholder="Type a city — Florence, Killen, Sheffield…"
+            placeholder="Type a city — e.g. Florence…"
             aria-label="Search tree services by city"
             autocomplete="off"
           />
@@ -165,15 +165,15 @@ const jsonLd = [
     </div>
     <div class="city-grid">
       {cities.map((c) => (
-        <a class="city-card reveal" href={`/alabama/${c.slug}/`}>
+        <article class="city-card reveal">
           <span class="county">{c.county} County</span>
-          <h3>{c.name}</h3>
+          <h3><a href={`/alabama/${c.slug}/`}>{c.name}</a></h3>
           <p>{c.blurb}</p>
           <div class="svc-links">
             <a href={`/alabama/${c.slug}/tree-trimming/`}>Trimming</a>
             <a href={`/alabama/${c.slug}/stump-grinding/`}>Stump grinding</a>
           </div>
-        </a>
+        </article>
       ))}
     </div>
   </section>

@@ -47,7 +47,8 @@ const hasPhone = tel.length > 0;
   </div>
 
   <div class="badge-row">
-    {biz.data.services.map((s) => <span class="badge svc">{serviceLabel(s)}</span>)}
+    {biz.data.services.slice(0, 4).map((s) => <span class="badge svc">{serviceLabel(s)}</span>)}
+    {biz.data.services.length > 4 && <span class="badge dim">+{biz.data.services.length - 4} more</span>}
   </div>
 
   <div class="row2">

@@ -52,7 +52,8 @@
 
   function cardHtml(b) {
     const conf = CONF[b.confidence] || CONF['needs-confirmation'];
-    const badges = b.services.map((s) => `<span class="badge svc">${s}</span>`).join('');
+    const svcBadges = b.services.slice(0, 4).map((s) => `<span class="badge svc">${s}</span>`).join('')
+      + (b.services.length > 4 ? `<span class="badge dim">+${b.services.length - 4} more</span>` : '');
     const tel = (b.phone || '').replace(/[^0-9+]/g, '');
     const rating = b.rating > 0
       ? `<span class="rating"><span class="stars">${stars(b.rating)}</span> ${b.rating.toFixed(1)}${b.reviewCount > 0 ? ` <span class="cnt">(${b.reviewCount}${b.ratingSource ? ' · ' + b.ratingSource : ''})</span>` : ''}</span>`
@@ -69,7 +70,7 @@
           </div>
           <span class="confidence-chip ${conf.cls}"><span class="dot"></span>${conf.label}</span>
         </div>
-        <div class="badge-row">${badges}</div>
+        <div class="badge-row">${svcBadges}</div>
         <div class="row2">
           ${rating}
           <div class="actions">
