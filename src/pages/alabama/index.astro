@@ -1,0 +1,65 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import BusinessCard from '../../components/BusinessCard.astro';
+import { cities } from '../../data/cities';
+import { allBusinesses } from '../../lib/biz';
+
+const businesses = await allBusinesses();
+const title = 'Alabama Tree Service Directory — The Shoals | Shoals Tree Pros';
+const description =
+  'Browse tree trimming, stump grinding, and removal crews across the Shoals region of northwest Alabama — Florence, Muscle Shoals, Sheffield, Tuscumbia, Killen, and Rogersville.';
+
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: `${Astro.site?.href ?? ''}` },
+      { '@type': 'ListItem', position: 2, name: 'Alabama' },
+    ],
+  },
+];
+---
+
+<Layout title={title} description={description} path="/alabama/" jsonLd={jsonLd}>
+  <div class="wrap"><nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> <span class="sep">/</span> <span class="here">Alabama</span></nav></div>
+
+  <section class="page-hero">
+    <div class="wrap">
+      <p class="kicker">Alabama · The Shoals</p>
+      <h1>Tree services across the Shoals</h1>
+      <p class="lede">
+        The Shoals is the four-city cluster on the Tennessee River in northwest Alabama — Florence, Muscle
+        Shoals, Sheffield, and Tuscumbia — plus the towns around them. These are the cities this directory
+        covers, each with its own crew list and service pages.
+      </p>
+    </div>
+  </section>
+
+  <section class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">{businesses.length} crews listed</p>
+      <h2>Pick your city</h2>
+    </div>
+    <div class="city-grid">
+      {cities.map((c) => {
+        const count = businesses.filter((b) => b.data.citySlug === c.slug).length;
+        return (
+          <a class="city-card reveal" href={`/alabama/${c.slug}/`}>
+            <span class="county">{c.county} County</span>
+            <h3>{c.name}</h3>
+            <p>{c.blurb}</p>
+            <p style="font-size: 0.85rem; font-weight: 600; color: var(--green-deep);">
+              {count > 0 ? `${count} crew${count === 1 ? '' : 's'} listed` : 'Crews serving this area'}
+            </p>
+          </a>
+        );
+      })}
+    </div>
+
+    <div class="group-head"><h2>All crews, alphabetical</h2><span class="count">{businesses.length}</span></div>
+    <div class="cards-grid">
+      {businesses.map((b) => <BusinessCard biz={b} />)}
+    </div>
+  </section>
+</Layout>

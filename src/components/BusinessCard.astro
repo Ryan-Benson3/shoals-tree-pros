@@ -1,0 +1,75 @@
+---
+import { serviceLabel } from '../lib/biz';
+
+interface Biz {
+  id: string;
+  data: {
+    name: string;
+    phone: string;
+    city: string;
+    state: string;
+    county: string;
+    website: string;
+    rating: number;
+    reviewCount: number;
+    ratingSource: string;
+    services: string[];
+    confidence: string;
+    sourceLabel: string;
+    sourceUrl: string;
+  };
+}
+
+const { biz } = Astro.props as { biz: Biz };
+
+const conf =
+  biz.data.confidence === 'provider-verified'
+    ? { label: 'Website verified', cls: 'is-verified' }
+    : biz.data.confidence === 'directory-listed'
+      ? { label: 'Directory listed', cls: 'is-listed' }
+      : { label: 'Needs confirmation', cls: '' };
+
+const stars = '★★★★★'.slice(0, Math.round(biz.data.rating)) + '☆☆☆☆☆'.slice(0, 5 - Math.round(biz.data.rating));
+const tel = biz.data.phone.replace(/[^0-9+]/g, '');
+const hasPhone = tel.length > 0;
+---
+
+<article class="biz-card">
+  <div class="top">
+    <div>
+      <h3><a href={`/business/${biz.id}/`}>{biz.data.name}</a></h3>
+      <div class="loc">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+        {biz.data.city}, {biz.data.state} · {biz.data.county} County
+      </div>
+    </div>
+    <span class={`confidence-chip ${conf.cls}`}><span class="dot"></span>{conf.label}</span>
+  </div>
+
+  <div class="badge-row">
+    {biz.data.services.map((s) => <span class="badge svc">{serviceLabel(s)}</span>)}
+  </div>
+
+  <div class="row2">
+    {biz.data.rating > 0 ? (
+      <span class="rating">
+        <span class="stars">{stars}</span> {biz.data.rating.toFixed(1)}
+        {biz.data.reviewCount > 0 && <span class="cnt">({biz.data.reviewCount}{biz.data.ratingSource ? ' · ' + biz.data.ratingSource : ''})</span>}
+      </span>
+    ) : (
+      <span class="rating" style="color:var(--soft);font-weight:400">No public reviews listed</span>
+    )}
+    <div class="actions">
+      {hasPhone ? (
+        <a class="btn btn-primary btn-sm" href={`tel:${tel}`}>Call</a>
+      ) : (
+        biz.data.sourceUrl && <a class="btn btn-gold btn-sm" href={biz.data.sourceUrl} rel="nofollow noopener" target="_blank">See listing</a>
+      )}
+      <a class="btn btn-ghost btn-sm" href={`/business/${biz.id}/`}>Profile</a>
+    </div>
+  </div>
+
+  <div class="src">
+    Source: {biz.data.sourceUrl ? <a href={biz.data.sourceUrl} rel="nofollow noopener" target="_blank">{biz.data.sourceLabel}</a> : biz.data.sourceLabel}
+  </div>
+</article>

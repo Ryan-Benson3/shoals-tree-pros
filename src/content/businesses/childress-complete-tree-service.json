@@ -1,0 +1,30 @@
+{
+  "name": "Childress Complete Tree Service",
+  "phone": "(256) 247-5015",
+  "address": "191 County Road 596",
+  "city": "Rogersville",
+  "citySlug": "rogersville",
+  "county": "Lauderdale",
+  "state": "AL",
+  "zip": "35652",
+  "website": "https://www.childresscompletetreeservice.com",
+  "facebook": "",
+  "email": "",
+  "rating": 0,
+  "reviewCount": 0,
+  "ratingSource": "",
+  "services": ["tree-trimming", "stump-grinding", "tree-removal", "lot-clearing", "storm-cleanup", "emergency"],
+  "serviceArea": ["Rogersville", "Lauderdale County", "West Limestone County", "Lawrence County", "South Tennessee"],
+  "yearsInBusiness": 32,
+  "insuredClaim": "Claims licensed & insured (via third-party listings)",
+  "certifiedClaim": "",
+  "summary": "Family-run (Ron & Stacy Childress) since 1994 out of Rogersville — removals, stump grinding, lot clearing, forestry mulching, and storm response across Lauderdale and neighboring counties.",
+  "confidence": "provider-verified",
+  "sourceLabel": "childresscompletetreeservice.com",
+  "sourceUrl": "https://www.childresscompletetreeservice.com/",
+  "sources": [
+    { "label": "Company website", "url": "https://www.childresscompletetreeservice.com/" },
+    { "label": "About page (since 1994)", "url": "https://www.childresscompletetreeservice.com/about-us" },
+    { "label": "CitySquares listing", "url": "https://citysquares.com/b/childress-complete-tree-service-13899610" }
+  ]
+}

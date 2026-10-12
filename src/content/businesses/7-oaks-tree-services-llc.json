@@ -1,0 +1,30 @@
+{
+  "name": "7 Oaks Tree Services LLC",
+  "phone": "(256) 483-7512",
+  "address": "1620 Highway 46",
+  "city": "Russellville",
+  "citySlug": "russellville",
+  "county": "Franklin",
+  "state": "AL",
+  "zip": "35653",
+  "website": "https://www.7oakstreeservices.com/",
+  "facebook": "",
+  "email": "blakee24@aol.com",
+  "rating": 0,
+  "reviewCount": 0,
+  "ratingSource": "",
+  "services": ["tree-trimming", "tree-removal"],
+  "serviceArea": ["Russellville", "Florence", "Muscle Shoals", "Franklin County"],
+  "yearsInBusiness": 0,
+  "insuredClaim": "",
+  "certifiedClaim": "",
+  "summary": "Russellville-based tree service (Franklin County, just south of the Shoals) with dedicated service pages for Florence and Muscle Shoals — removal and trimming. Email-first contact.",
+  "confidence": "provider-verified",
+  "sourceLabel": "7oakstreeservices.com",
+  "sourceUrl": "https://www.7oakstreeservices.com/",
+  "sources": [
+    { "label": "Company website", "url": "https://www.7oakstreeservices.com/" },
+    { "label": "Florence service page", "url": "https://www.7oakstreeservices.com/florence--al" },
+    { "label": "Muscle Shoals service page", "url": "https://www.7oakstreeservices.com/muscle-shoals--al" }
+  ]
+}

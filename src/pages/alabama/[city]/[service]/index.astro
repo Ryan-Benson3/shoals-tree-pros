@@ -1,0 +1,142 @@
+---
+import Layout from '../../../../layouts/Layout.astro';
+import BusinessCard from '../../../../components/BusinessCard.astro';
+import FaqBlock from '../../../../components/FaqBlock.astro';
+import { cities, cityBySlug } from '../../../../data/cities';
+import { coreServices, serviceBySlug } from '../../../../data/services';
+import { faqsFor } from '../../../../data/faqs';
+import { allBusinesses } from '../../../../lib/biz';
+
+export async function getStaticPaths() {
+  return cities.flatMap((city) =>
+    coreServices.map((service) => ({ params: { city: city.slug, service: service.slug }, props: { city, service } }))
+  );
+}
+
+const { city, service } = Astro.props;
+const businesses = await allBusinesses();
+const label = service.name.split('&')[0].trim(); // "Tree Trimming" / "Stump Grinding"
+
+const does = businesses.filter((b) => b.data.services.includes(service.slug));
+const inCity = does.filter((b) => b.data.citySlug === city.slug);
+const inCounty = does.filter((b) => b.data.county === city.county && b.data.citySlug !== city.slug);
+const serves = does.filter(
+  (b) =>
+    b.data.citySlug !== city.slug &&
+    b.data.county !== city.county &&
+    b.data.serviceArea.some((a) => a.toLowerCase().includes(city.name.toLowerCase()))
+);
+const allDoes = [...inCity, ...inCounty, ...serves];
+const site = Astro.site?.href ?? '';
+
+const title = `${label} in ${city.name}, AL — Local Crews | Shoals Tree Pros`;
+const description = `${label} crews serving ${city.name}, Alabama. Independent, source-backed directory with phone numbers, services, and confidence labels. Part of the Shoals Tree Pros directory.`;
+
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: site },
+      { '@type': 'ListItem', position: 2, name: 'Alabama', item: `${site}alabama/` },
+      { '@type': 'ListItem', position: 3, name: city.name, item: `${site}alabama/${city.slug}/` },
+      { '@type': 'ListItem', position: 4, name: label },
+    ],
+  },
+  ...(allDoes.length > 0
+    ? [
+        {
+          '@context': 'https://schema.org',
+          '@type': 'ItemList',
+          name: `${label} in ${city.name}, Alabama`,
+          itemListElement: allDoes.map((b, i) => ({
+            '@type': 'ListItem',
+            position: i + 1,
+            url: `${site}business/${b.id}/`,
+            name: b.data.name,
+          })),
+        },
+      ]
+    : []),
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqsFor('service').map((f) => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a },
+    })),
+  },
+];
+---
+
+<Layout title={title} description={description} path={`/alabama/${city.slug}/${service.slug}/`} jsonLd={jsonLd}>
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Breadcrumb">
+      <a href="/">Home</a> <span class="sep">/</span> <a href="/alabama/">Alabama</a> <span class="sep">/</span>
+      <a href={`/alabama/${city.slug}/`}>{city.name}</a> <span class="sep">/</span>
+      <span class="here">{label}</span>
+    </nav>
+  </div>
+
+  <section class="page-hero">
+    <div class="wrap">
+      <p class="kicker">{city.name} · {city.county} County</p>
+      <h1>{label} in {city.name}, AL</h1>
+      <p class="lede">{service.short} Below: every listed crew that does {label.toLowerCase()} work serving {city.name}, closest first.</p>
+    </div>
+  </section>
+
+  <section class="wrap">
+    <div class="src-box reveal" style="margin-bottom: 2rem;">
+      <strong>What {label.toLowerCase()} covers in the Shoals:</strong> {service.description}
+    </div>
+
+    {inCity.length > 0 && (
+      <>
+        <div class="group-head"><h2>Based in {city.name}</h2><span class="count">{inCity.length}</span></div>
+        <div class="cards-grid">{inCity.map((b) => <BusinessCard biz={b} />)}</div>
+      </>
+    )}
+    {inCounty.length > 0 && (
+      <>
+        <div class="group-head"><h2>Nearby in {city.county} County</h2><span class="count">{inCounty.length}</span></div>
+        <div class="cards-grid">{inCounty.map((b) => <BusinessCard biz={b} />)}</div>
+      </>
+    )}
+    {serves.length > 0 && (
+      <>
+        <div class="group-head"><h2>Regional crews serving {city.name}</h2><span class="count">{serves.length}</span></div>
+        <div class="cards-grid">{serves.map((b) => <BusinessCard biz={b} />)}</div>
+      </>
+    )}
+    {allDoes.length === 0 && (
+      <div class="src-box">
+        <strong>No crew listed for {label.toLowerCase()} in {city.name} yet.</strong> We only list real,
+        source-backed businesses. Until one is confirmed, browse
+        <a href={`/alabama/${city.slug}/`}>all tree services in {city.name}</a> — most crews trimming trees also
+        handle {label.toLowerCase()} on request.
+      </div>
+    )}
+
+    <div class="svc-grid" style="margin-top: 2.5rem;">
+      {service.slug === 'stump-grinding' ? (
+        <div class="svc" style="border: 2px solid var(--ink); box-shadow: 8px 8px 0 rgba(13,31,20,0.08);">
+          <div class="ico" style="background: var(--gold-soft);">🪵</div>
+          <h3>Ballpark the price first</h3>
+          <p>Stump size drives the quote. Get a typical price band before you call around.</p>
+          <a class="btn btn-primary btn-sm" href="/tools/stump-grinding-cost/" style="margin-top: 0.6rem;">Stump cost estimator</a>
+        </div>
+      ) : (
+        <div class="svc">
+          <div class="ico">🪵</div>
+          <h3>Trimming leave a stump behind?</h3>
+          <p>Most Shoals crews grind stumps too — and you don't need the same crew that removed the tree.</p>
+          <a class="btn btn-ghost btn-sm" href={`/alabama/${city.slug}/stump-grinding/`} style="margin-top: 0.6rem;">Stump grinding crews</a>
+        </div>
+      )}
+    </div>
+  </section>
+
+  <FaqBlock scope="service" heading={`${label} questions`} />
+</Layout>

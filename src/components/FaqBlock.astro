@@ -1,0 +1,21 @@
+---
+import { faqsFor } from '../data/faqs';
+import type { Faq } from '../data/faqs';
+
+interface Props { scope: 'home' | 'city' | 'service'; heading?: string; }
+const { scope, heading = 'Questions people ask' } = Astro.props;
+const list: Faq[] = faqsFor(scope);
+---
+
+<section class="wrap faq" id="faq">
+  <div class="section-head">
+    <p class="eyebrow">FAQ</p>
+    <h2>{heading}</h2>
+  </div>
+  {list.map((f) => (
+    <details>
+      <summary>{f.q}</summary>
+      <p set:html={f.a.replace(/our stump cost estimator/, '<a href="/tools/stump-grinding-cost/">our stump cost estimator</a>')} />
+    </details>
+  ))}
+</section>

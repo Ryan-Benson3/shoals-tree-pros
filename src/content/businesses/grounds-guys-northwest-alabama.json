@@ -1,0 +1,29 @@
+{
+  "name": "The Grounds Guys of Northwest Alabama",
+  "phone": "(256) 384-0136",
+  "address": "320 S Holston Rd",
+  "city": "Muscle Shoals",
+  "citySlug": "muscle-shoals",
+  "county": "Colbert",
+  "state": "AL",
+  "zip": "35661",
+  "website": "https://www.groundsguys.com/locations/northwest-alabama/",
+  "facebook": "",
+  "email": "",
+  "rating": 4.7,
+  "reviewCount": 0,
+  "ratingSource": "Google (via directory data)",
+  "services": ["storm-cleanup"],
+  "serviceArea": ["Florence", "Muscle Shoals", "Sheffield", "Tuscumbia", "Killen", "Rogersville", "Lexington", "Athens"],
+  "yearsInBusiness": 12,
+  "insuredClaim": "",
+  "certifiedClaim": "",
+  "summary": "National lawn-care and landscaping franchise (Neighborly) with a Muscle Shoals location since 2014 — primarily lawn and landscape work with seasonal and storm cleanup; not a specialist tree-removal crew.",
+  "confidence": "provider-verified",
+  "sourceLabel": "groundsguys.com",
+  "sourceUrl": "https://www.groundsguys.com/locations/northwest-alabama/",
+  "sources": [
+    { "label": "Franchise location page", "url": "https://www.groundsguys.com/locations/northwest-alabama/" },
+    { "label": "Muscle Shoals page", "url": "https://www.groundsguys.com/locations/alabama/muscle-shoals/" }
+  ]
+}

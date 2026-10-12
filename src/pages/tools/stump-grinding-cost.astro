@@ -1,0 +1,83 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import FaqBlock from '../../components/FaqBlock.astro';
+import { faqsFor } from '../../data/faqs';
+
+const title = 'Stump Grinding Cost Estimator — The Shoals, AL | Shoals Tree Pros';
+const description =
+  'Get a ballpark stump grinding price before you call. Slide the stump diameter and count for a typical price band based on published industry ranges for the Shoals, Alabama market.';
+
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebApplication',
+    name: 'Stump Grinding Cost Estimator',
+    applicationCategory: 'UtilitiesApplication',
+    operatingSystem: 'Web',
+    description: 'Ballpark stump grinding cost estimator based on published industry price ranges.',
+    offers: { '@type': 'Offer', price: 0, priceCurrency: 'USD' },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqsFor('service')
+      .filter((f) => f.q.toLowerCase().includes('cost') || f.q.toLowerCase().includes('grinding'))
+      .map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
+  },
+];
+---
+
+<Layout title={title} description={description} path="/tools/stump-grinding-cost/" jsonLd={jsonLd}>
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Breadcrumb">
+      <a href="/">Home</a> <span class="sep">/</span> <span class="here">Stump grinding cost</span>
+    </nav>
+  </div>
+
+  <section class="page-hero">
+    <div class="wrap">
+      <p class="kicker">Free tool · No signup</p>
+      <h1>Stump grinding cost estimator</h1>
+      <p class="lede">
+        A quick ballpark before you call crews. Built on published industry price ranges — honest about its
+        limits. Your real quote depends on access, roots, and how deep you want it ground.
+      </p>
+    </div>
+  </section>
+
+  <section class="wrap" style="padding-top: 2rem;">
+    <div class="tool-shell reveal">
+      <label for="stump-dia">Stump diameter (across the cut)</label>
+      <div class="d-read"><span id="dia-read">20″</span></div>
+      <input id="stump-dia" type="range" min="6" max="60" step="1" value="20" />
+      <div class="tool-chips" style="margin-top: 0.5rem;">
+        <button type="button" data-dia="12">Dinner plate · 12″</button>
+        <button type="button" data-dia="20">Typical · 20″</button>
+        <button type="button" data-dia="30">Big oak · 30″</button>
+        <button type="button" data-dia="42">Huge · 42″</button>
+      </div>
+
+      <label for="stump-count" style="margin-top: 1.8rem;">How many stumps? <span id="stumps-read" style="color: var(--green-deep);">1</span></label>
+      <input id="stump-count" type="range" min="1" max="10" step="1" value="1" />
+
+      <div class="tool-out">
+        <p class="lbl" style="font-size: 0.74rem; font-weight: 700; letter-spacing: 0.09em; text-transform: uppercase; color: var(--soft);">Typical range</p>
+        <p class="range" id="stump-out">$150 – $300</p>
+        <p class="fine" id="stump-out-note">Medium stump — the most common residential job in the Shoals.</p>
+        <p class="fine" style="margin-top: 0.9rem;">
+          Based on commonly published industry ranges (Angi/HomeAdvisor-style data). Not a quote — Shoals crews
+          price by looking at the stump. Grab two or three quotes from the <a href="/#pros">directory</a> and
+          you'll know your real number fast.
+        </p>
+      </div>
+    </div>
+
+    <div class="stats reveal" style="margin-top: 2.5rem;">
+      <div class="stat"><div class="n">$100–400</div><div class="l">typical total for one residential stump</div></div>
+      <div class="stat"><div class="n">4–8″</div><div class="l">how deep a standard grind goes below grade</div></div>
+      <div class="stat"><div class="n">2–3</div><div class="l">quotes to get before you book</div></div>
+    </div>
+  </section>
+
+  <FaqBlock scope="service" heading="Stump grinding questions" />
+</Layout>

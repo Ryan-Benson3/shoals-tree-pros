@@ -1,0 +1,30 @@
+{
+  "name": "Tree Commander",
+  "phone": "(256) 600-3239",
+  "address": "436 Co Rd 42",
+  "city": "Florence",
+  "citySlug": "florence",
+  "county": "Lauderdale",
+  "state": "AL",
+  "zip": "35633",
+  "website": "",
+  "facebook": "",
+  "email": "",
+  "rating": 4.7,
+  "reviewCount": 47,
+  "ratingSource": "Birdeye",
+  "services": ["tree-trimming", "tree-removal"],
+  "serviceArea": ["Florence", "Lauderdale County"],
+  "yearsInBusiness": 0,
+  "insuredClaim": "",
+  "certifiedClaim": "",
+  "summary": "Florence tree service with one of the strongest review footprints in the Shoals — 4.7 stars across 47 reviews — covering removals, trimming, and maintenance. Reviews mention senior discounts. No website; phone only.",
+  "confidence": "directory-listed",
+  "sourceLabel": "Birdeye reviews",
+  "sourceUrl": "https://reviews.birdeye.com/tree-commander-170490295204293",
+  "sources": [
+    { "label": "Birdeye reviews (4.7★, 47 reviews)", "url": "https://reviews.birdeye.com/tree-commander-170490295204293" },
+    { "label": "Chamber of Commerce listing", "url": "https://www.chamberofcommerce.com/business-directory/alabama/florence/tree-service/2023269168-tree-commander" },
+    { "label": "MapQuest listing", "url": "https://www.mapquest.com/us/alabama/tree-commander-454261519" }
+  ]
+}

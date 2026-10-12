@@ -1,0 +1,29 @@
+{
+  "name": "Transform Cleaning & Tree Service",
+  "phone": "(256) 904-4976",
+  "address": "855 Baker Ln",
+  "city": "Tuscumbia",
+  "citySlug": "tuscumbia",
+  "county": "Colbert",
+  "state": "AL",
+  "zip": "35674",
+  "website": "https://www.transformyourproperty.com",
+  "facebook": "",
+  "email": "",
+  "rating": 0,
+  "reviewCount": 0,
+  "ratingSource": "",
+  "services": ["tree-trimming", "stump-grinding", "tree-removal", "storm-cleanup", "emergency", "lot-clearing"],
+  "serviceArea": ["Tuscumbia", "Florence", "Muscle Shoals", "Sheffield", "Lauderdale County", "Colbert County"],
+  "yearsInBusiness": 0,
+  "insuredClaim": "Claims licensed & insured (per company website)",
+  "certifiedClaim": "",
+  "summary": "Veteran co-owned Tuscumbia company blending tree work — removals, trimming, stump grinding, same-day storm response — with land clearing and pressure washing. All details self-reported on its own site.",
+  "confidence": "provider-verified",
+  "sourceLabel": "transformyourproperty.com",
+  "sourceUrl": "https://www.transformyourproperty.com/",
+  "sources": [
+    { "label": "Company website", "url": "https://www.transformyourproperty.com/" },
+    { "label": "Land clearing page", "url": "https://www.transformyourproperty.com/services/land-clearing" }
+  ]
+}

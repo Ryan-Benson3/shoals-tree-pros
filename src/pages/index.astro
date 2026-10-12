@@ -1,0 +1,235 @@
+---
+import Layout from '../layouts/Layout.astro';
+import BusinessCard from '../components/BusinessCard.astro';
+import FaqBlock from '../components/FaqBlock.astro';
+import { cities } from '../data/cities';
+import { services } from '../data/services';
+import { faqsFor } from '../data/faqs';
+import { allBusinesses, clientIndex } from '../lib/biz';
+
+const businesses = await allBusinesses();
+const idx = JSON.stringify(clientIndex(businesses)).replace(/</g, '\\u003c');
+
+const lauderdale = businesses.filter((b) => b.data.county === 'Lauderdale');
+const colbert = businesses.filter((b) => b.data.county === 'Colbert');
+const others = businesses.filter((b) => !['Lauderdale', 'Colbert'].includes(b.data.county));
+
+const title = 'Tree Trimming & Stump Grinding in the Shoals, AL | Shoals Tree Pros';
+const description =
+  'An independent, source-backed directory of tree trimming, stump grinding, removal, and storm cleanup crews across Florence, Muscle Shoals, Sheffield, Tuscumbia, Killen, and Rogersville, Alabama.';
+
+const site = Astro.site?.href ?? 'https://shoals-tree-pros.pages.dev';
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: 'Shoals Tree Pros',
+    url: site,
+    description,
+    inLanguage: 'en',
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: 'Tree trimming and stump grinding crews in the Shoals, Alabama',
+    itemListElement: businesses.map((b, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      url: `${site}business/${b.id}/`,
+      name: b.data.name,
+    })),
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqsFor('home').map((f) => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a },
+    })),
+  },
+];
+---
+
+<Layout title={title} description={description} path="/" jsonLd={jsonLd}>
+  <section class="hero">
+    <div class="wrap">
+      <p class="kicker">The Shoals · Northwest Alabama</p>
+      <h1>Local crews for tree work across the <span class="hl-word">Shoals</span></h1>
+      <p class="lede">
+        Tree trimming, stump grinding, removals, and storm cleanup in Florence, Muscle Shoals, Sheffield,
+        Tuscumbia, Killen, and Rogersville. Every listing is compiled from public sources and labeled so you
+        know exactly how much to trust it.
+      </p>
+
+      <div class="search-shell" role="search">
+        <div class="search-bar">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+          <input
+            id="city-search"
+            type="text"
+            placeholder="Type a city — Florence, Killen, Sheffield…"
+            aria-label="Search tree services by city"
+            autocomplete="off"
+          />
+          <button id="search-go" class="btn btn-primary btn-sm" type="button">Search</button>
+        </div>
+        <div class="search-chips" aria-label="Quick city search">
+          {cities.map((c) => <button type="button" data-city={c.name}>{c.name}</button>)}
+        </div>
+        <p class="search-note">City-first results, right here on the page — no redirects.</p>
+      </div>
+
+      <div class="proof-strip">
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg>Every listing traced to a public source</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg>No pay-to-rank ordering</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg>Free for homeowners, always</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap" style="padding-block: 2.5rem 0;">
+    <div class="stats reveal">
+      <div class="stat"><div class="n">{businesses.length}</div><div class="l">crews listed across the Shoals</div></div>
+      <div class="stat"><div class="n">{cities.length}</div><div class="l">cities with dedicated pages</div></div>
+      <div class="stat"><div class="n">2</div><div class="l">counties — Lauderdale &amp; Colbert</div></div>
+      <div class="stat"><div class="n">100%</div><div class="l">listings with a cited source</div></div>
+    </div>
+  </section>
+
+  <!-- Inline search results land here -->
+  <section class="wrap" id="search-results" hidden style="padding-block: 2.5rem 0;"></section>
+  <section class="wrap" id="search-empty" hidden style="padding-block: 0.8rem 0;">
+    <div class="src-box">
+      <strong>No exact city match.</strong> Every crew below serves the wider Shoals — confirm travel to your
+      address when you call. Searching a business name works too.
+    </div>
+  </section>
+
+  <section class="wrap" id="pros">
+    <div class="section-head">
+      <p class="eyebrow">The directory</p>
+      <h2>Every listed crew, by county</h2>
+      <p>
+        Lauderdale County covers Florence, Muscle Shoals, Killen, and Rogersville. Colbert County covers
+        Sheffield and Tuscumbia. Cards show what each crew does and where the listing came from.
+      </p>
+    </div>
+
+    <div class="group-head"><h2>Lauderdale County</h2><span class="count">{lauderdale.length}</span></div>
+    <div class="cards-grid">
+      {lauderdale.map((b) => <BusinessCard biz={b} />)}
+    </div>
+
+    <div class="group-head"><h2>Colbert County</h2><span class="count">{colbert.length}</span></div>
+    <div class="cards-grid">
+      {colbert.map((b) => <BusinessCard biz={b} />)}
+    </div>
+
+    {others.length > 0 && (
+      <div class="group-head"><h2>Serving the Shoals from nearby</h2><span class="count">{others.length}</span></div>
+      <div class="cards-grid">
+        {others.map((b) => <BusinessCard biz={b} />)}
+      </div>
+    )}
+  </section>
+
+  <section class="how">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">How this directory works</p>
+        <h2>Built like a reference, not a lead trap</h2>
+      </div>
+      <div class="proc">
+        <div class="p-card">
+          <h3>Compiled from public sources</h3>
+          <p>Every business is added from public listings — phone books, review sites, the company's own website. Nothing is invented, and each card cites its source.</p>
+        </div>
+        <div class="p-card">
+          <h3>Labeled by confidence</h3>
+          <p>Green dot means the crew's own website backs the details. Gold dot means a third-party directory lists them. Gray means it likely needs confirmation.</p>
+        </div>
+        <div class="p-card">
+          <h3>Owners can claim &amp; correct</h3>
+          <p>Run a tree service in the Shoals? Claim your listing, fix what's wrong, or get added — free. No pay-to-rank, ever. Details on the About page.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap" id="cities">
+    <div class="section-head">
+      <p class="eyebrow">Cities</p>
+      <h2>Browse by city</h2>
+      <p>Each city page lists local crews first, then crews from the same county, then regional crews that serve the area.</p>
+    </div>
+    <div class="city-grid">
+      {cities.map((c) => (
+        <a class="city-card reveal" href={`/alabama/${c.slug}/`}>
+          <span class="county">{c.county} County</span>
+          <h3>{c.name}</h3>
+          <p>{c.blurb}</p>
+          <div class="svc-links">
+            <a href={`/alabama/${c.slug}/tree-trimming/`}>Trimming</a>
+            <a href={`/alabama/${c.slug}/stump-grinding/`}>Stump grinding</a>
+          </div>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <section class="wrap" id="services" style="background: var(--paper-2); border-radius: 20px;">
+    <div class="section-head">
+      <p class="eyebrow">Services</p>
+      <h2>What Shoals tree crews actually do</h2>
+    </div>
+    <div class="svc-grid">
+      {services.map((s) => (
+        <div class="svc">
+          <div class="ico" aria-hidden="true">{s.icon}</div>
+          <h3>{s.name}</h3>
+          <p>{s.short}</p>
+          <a class="learn" href={`/alabama/florence/${s.core ? s.slug : 'tree-trimming'}/`}>
+            See crews &amp; details <span aria-hidden="true">→</span>
+          </a>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Ballpark first</p>
+      <h2>What should stump grinding cost?</h2>
+      <p>Before you call anyone, get a rough number from our estimator — built on published industry ranges, honest about its limits.</p>
+    </div>
+    <div class="svc-grid">
+      <div class="svc" style="border: 2px solid var(--ink); box-shadow: 8px 8px 0 rgba(13,31,20,0.08);">
+        <div class="ico" style="background: var(--gold-soft);">🪵</div>
+        <h3>Stump Grinding Cost Estimator</h3>
+        <p>Slide the stump diameter, set how many stumps, and see a typical price band for the Shoals market.</p>
+        <a class="btn btn-primary btn-sm" href="/tools/stump-grinding-cost/" style="margin-top: 0.6rem;">Try the estimator</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <FaqBlock scope="home" heading="Tree work questions, answered straight" />
+  </div>
+
+  <section class="wrap" style="padding-block: 1rem 4.5rem;">
+    <div class="cta-box">
+      <h2>Run a tree service in the <span class="hl">Shoals</span>?</h2>
+      <p>
+        Get listed free, claim your profile, and correct anything that's wrong. No listing fee, no ranking fee —
+        this directory stays free to read because it's built to be trusted, not sold.
+      </p>
+      <div class="cta-row">
+        <a class="btn btn-gold" href="/about/#claim">Claim or add your listing</a>
+        <a class="btn btn-ghost" href="/about/">How listings work</a>
+      </div>
+    </div>
+  </section>
+
+  <script type="application/json" id="biz-index" set:html={idx} />
+</Layout>

@@ -1,0 +1,30 @@
+{
+  "name": "Brinks Outdoor Services, Inc.",
+  "phone": "(256) 710-8788",
+  "address": "2835 County Road 259",
+  "city": "Florence",
+  "citySlug": "florence",
+  "county": "Lauderdale",
+  "state": "AL",
+  "zip": "35633",
+  "website": "https://www.brinksforestproducts.com",
+  "facebook": "",
+  "email": "",
+  "rating": 0,
+  "reviewCount": 0,
+  "ratingSource": "",
+  "services": ["tree-trimming", "tree-removal", "firewood"],
+  "serviceArea": ["Florence", "Lauderdale County"],
+  "yearsInBusiness": 0,
+  "insuredClaim": "",
+  "certifiedClaim": "",
+  "summary": "Florence outdoor services company and registered carrier (USDOT 3115087), connected to Brink's Forest Products — mulch and firewood supply alongside tree work.",
+  "confidence": "directory-listed",
+  "sourceLabel": "Directory listings",
+  "sourceUrl": "https://www.mapquest.com/us/alabama/brinks-outdoor-services-352781065",
+  "sources": [
+    { "label": "MapQuest listing", "url": "https://www.mapquest.com/us/alabama/brinks-outdoor-services-352781065" },
+    { "label": "FMCSA carrier record", "url": "https://www.quicktransportsolutions.com/truckingcompany/alabama/brinks-outdoor-services-inc-usdot-3115087.php" },
+    { "label": "Brink's Forest Products site", "url": "https://www.brinksforestproducts.com" }
+  ]
+}

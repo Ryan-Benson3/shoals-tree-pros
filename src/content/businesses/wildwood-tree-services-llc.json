@@ -1,0 +1,28 @@
+{
+  "name": "Wildwood Tree Services, LLC",
+  "phone": "",
+  "address": "803 Old Lee Highway",
+  "city": "Tuscumbia",
+  "citySlug": "tuscumbia",
+  "county": "Colbert",
+  "state": "AL",
+  "zip": "35674",
+  "website": "",
+  "facebook": "",
+  "email": "",
+  "rating": 4.9,
+  "reviewCount": 6,
+  "ratingSource": "Angi",
+  "services": ["tree-trimming", "tree-removal"],
+  "serviceArea": ["Tuscumbia", "Colbert County"],
+  "yearsInBusiness": 8,
+  "insuredClaim": "",
+  "certifiedClaim": "",
+  "summary": "Veteran-owned Tuscumbia tree service (in business since 2018) with a 4.9 Angi rating. No public phone number published — contact runs through its Angi profile.",
+  "confidence": "needs-confirmation",
+  "sourceLabel": "Angi profile",
+  "sourceUrl": "https://www.angi.com/companylist/us/al/tuscumbia/wildwood-tree-services-llc-reviews-1.htm",
+  "sources": [
+    { "label": "Angi profile (4.9★, 6 reviews)", "url": "https://www.angi.com/companylist/us/al/tuscumbia/wildwood-tree-services-llc-reviews-1.htm" }
+  ]
+}

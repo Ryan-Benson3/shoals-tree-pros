@@ -1,0 +1,107 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const title = 'About Shoals Tree Pros — How This Directory Works';
+const description =
+  'Shoals Tree Pros is an independent, source-backed directory of tree trimming and stump grinding crews in the Shoals, Alabama. Here is how listings are compiled, labeled, and corrected.';
+
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'AboutPage',
+    name: 'About Shoals Tree Pros',
+    url: `${Astro.site?.href ?? ''}about/`,
+  },
+];
+---
+
+<Layout title={title} description={description} path="/about/" jsonLd={jsonLd}>
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Breadcrumb">
+      <a href="/">Home</a> <span class="sep">/</span> <span class="here">About</span>
+    </nav>
+  </div>
+
+  <section class="page-hero">
+    <div class="wrap">
+      <p class="kicker">The short version</p>
+      <h1>A directory built to be trusted</h1>
+      <p class="lede">
+        Shoals Tree Pros lists real tree trimming and stump grinding crews across the Shoals — Florence, Muscle
+        Shoals, Sheffield, Tuscumbia, Killen, and Rogersville. Every listing is compiled from public sources,
+        cited on the card, and labeled with how confident we are. Nothing is invented to fill a page.
+      </p>
+    </div>
+  </section>
+
+  <section class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Method</p>
+      <h2>How listings get built</h2>
+    </div>
+    <div class="proc">
+      <div class="p-card">
+        <h3>Collect from public sources</h3>
+        <p>A business enters the directory only when a public source names it — the company's own website, its Google profile, Yellowpages, BBB, Facebook, or state records. Phone numbers and addresses are copied from those sources, not guessed.</p>
+      </div>
+      <div class="p-card">
+        <h3>Label the confidence</h3>
+        <p><strong>Website verified</strong> (green): the business's own site backs the details. <strong>Directory listed</strong> (gold): a solid third-party listing. <strong>Needs confirmation</strong> (gray): likely real, details thin. Ratings appear only when a public source shows them.</p>
+      </div>
+      <div class="p-card">
+        <h3>Correct, always</h3>
+        <p>Details change. Any owner or reader can send a correction and we fix it. Listings that go stale — disconnected phones, closed businesses — get flagged and removed, not left to rot.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="how" id="claim">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">For tree crews</p>
+        <h2>Claim or add your listing — free</h2>
+        <p>
+          There is no listing fee, no ranking fee, and no pay-per-lead. Ordering on this site is not for sale,
+          period. Here's how to get on or fix your profile:
+        </p>
+      </div>
+      <div class="proc">
+        <div class="p-card">
+          <h3>1. Send your details</h3>
+          <p>Open a request at our <a href="https://github.com/Ryan-Benson3/shoals-tree-pros/issues" target="_blank" rel="noopener">GitHub issues page</a> with your business name, phone, city, services, and website or Facebook link. Corrections to existing listings work the same way.</p>
+        </div>
+        <div class="p-card">
+          <h3>2. We verify against public info</h3>
+          <p>If your own website or profile backs the details, your listing upgrades to "website verified." Claims like insurance or arborist certification need to be stated on a page you control before they appear.</p>
+        </div>
+        <div class="p-card">
+          <h3>3. You're listed — stays free</h3>
+          <p>Your profile links your phone and site directly. Homeowners call you straight; no lead form in the middle. If we ever add optional featured placement, basic listings stay free and clearly labeled.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Boundaries</p>
+      <h2>What this site does not do</h2>
+    </div>
+    <ul class="fact-list" style="max-width: 68ch; gap: 0.8rem;">
+      <li>No paid ranking — listing order is never sold</li>
+      <li>No invented reviews, ratings, or "verified" badges — ratings show only when a public source has them</li>
+      <li>No fabricated pricing, timelines, or service claims on behalf of any business</li>
+      <li>No lead forms pretending to be quotes — phone numbers connect you straight to the crew</li>
+      <li>No affiliation with the businesses listed — this is an independent directory</li>
+    </ul>
+
+    <div class="cta-box" style="margin-top: 3rem;">
+      <h2>Spot something <span class="hl">wrong</span>?</h2>
+      <p>Listings drift out of date. If a number's dead or a crew's gone, tell us and it gets fixed or pulled.</p>
+      <div class="cta-row">
+        <a class="btn btn-gold" href="https://github.com/Ryan-Benson3/shoals-tree-pros/issues" target="_blank" rel="noopener">Send a correction</a>
+        <a class="btn btn-ghost" href="/#pros">Browse the directory</a>
+      </div>
+    </div>
+  </section>
+</Layout>

@@ -1,0 +1,166 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import BusinessCard from '../../components/BusinessCard.astro';
+import { cityBySlug } from '../../data/cities';
+import { serviceLabel, allBusinesses, type BizEntry } from '../../lib/biz';
+
+export async function getStaticPaths() {
+  const businesses = await allBusinesses();
+  return businesses.map((business) => ({ params: { slug: business.id }, props: { business } }));
+}
+
+const { business } = Astro.props as { business: BizEntry };
+const d = business.data;
+const site = Astro.site?.href ?? '';
+const tel = d.phone.replace(/[^0-9+]/g, '');
+
+const others = (await allBusinesses())
+  .filter(
+    (b) =>
+      b.id !== business.id &&
+      (b.data.county === d.county || b.data.serviceArea.some((a) => a.toLowerCase().includes(d.city.toLowerCase())))
+  )
+  .slice(0, 6);
+
+const conf =
+  d.confidence === 'provider-verified'
+    ? { label: 'Website verified — details backed by this business’s own site', cls: 'is-verified' }
+    : d.confidence === 'directory-listed'
+      ? { label: 'Directory listed — from a third-party public listing', cls: 'is-listed' }
+      : { label: 'Needs confirmation — details are likely but unverified', cls: '' };
+
+const cityPage = cityBySlug(d.citySlug);
+const crumbCity = cityPage
+  ? `<a href="/alabama/${d.citySlug}/">${d.city}</a> <span class="sep">/</span> `
+  : '<a href="/alabama/">Alabama</a> <span class="sep">/</span> ';
+
+const title = `${d.name} — ${d.city}, AL Tree Service | Shoals Tree Pros`;
+const description = `${d.name} is a tree service listed in the Shoals Tree Pros directory${d.address ? `, based at ${d.address}, ${d.city}, ${d.state}` : `, serving ${d.city}, ${d.state}`}. ${serviceLabel(d.services[0] ?? 'tree work')}${d.services.length > 1 ? ' and more' : ''}. Source-backed listing${d.phone ? ` — call ${d.phone}` : ''}.`;
+const hasPhone = tel.length > 0;
+
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'LocalBusiness',
+    name: d.name,
+    ...(d.phone ? { telephone: d.phone } : {}),
+    ...(d.address ? { address: { '@type': 'PostalAddress', streetAddress: d.address, addressLocality: d.city, addressRegion: d.state, postalCode: d.zip } } : { address: { '@type': 'PostalAddress', addressLocality: d.city, addressRegion: d.state } }),
+    areaServed: d.serviceArea.length ? d.serviceArea : [d.city],
+    ...(d.website ? { url: d.website } : {}),
+    ...(d.reviewCount > 0 ? { aggregateRating: { '@type': 'AggregateRating', ratingValue: d.rating, reviewCount: d.reviewCount } } : {}),
+    description: `Tree service listed on Shoals Tree Pros, an independent directory for the Shoals, Alabama. Details compiled from public sources — verify before hiring.`,
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: site },
+      { '@type': 'ListItem', position: 2, name: 'Alabama', item: `${site}alabama/` },
+      ...(cityPage ? [{ '@type': 'ListItem', position: 3, name: d.city, item: `${site}alabama/${d.citySlug}/` }] : []),
+      { '@type': 'ListItem', position: cityPage ? 4 : 3, name: d.name },
+    ],
+  },
+];
+---
+
+<Layout title={title} description={description} path={`/business/${business.id}/`} jsonLd={jsonLd}>
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Breadcrumb" set:html={`<a href="/">Home</a> <span class="sep">/</span> ${crumbCity}<span class="here">${d.name}</span>`} />
+  </div>
+
+  <section class="page-hero" style="padding-bottom: 2rem;">
+    <div class="wrap">
+      <p class="kicker">{d.city}, {d.state} · {d.county} County</p>
+      <h1>{d.name}</h1>
+      <div class="badge-row" style="margin-top: 1rem;">
+        {d.services.map((s) => <span class="badge svc">{serviceLabel(s)}</span>)}
+      </div>
+      <p class="lede">{d.summary || `Tree service serving ${d.city} and the surrounding Shoals area.`}</p>
+      <p style="margin-top: 1.2rem;">
+        <span class={`confidence-chip ${conf.cls}`}><span class="dot"></span>{conf.label}</span>
+      </p>
+    </div>
+  </section>
+
+  <section class="wrap" style="padding-top: 1.5rem;">
+    <div class="profile-head">
+      <div>
+        <h2 style="font-size: 1.4rem; margin-bottom: 0.9rem;">What they do</h2>
+        <ul class="fact-list">
+          {d.services.map((s) => <li>{serviceLabel(s)}</li>)}
+          {d.yearsInBusiness > 0 && <li>In business since roughly {new Date().getFullYear() - d.yearsInBusiness} ({d.yearsInBusiness}+ years, per listing sources)</li>}
+          {d.insuredClaim && <li>{d.insuredClaim}</li>}
+          {d.certifiedClaim && <li>{d.certifiedClaim}</li>}
+        </ul>
+
+        {d.serviceArea.length > 0 && (
+          <>
+            <h2 style="font-size: 1.4rem; margin: 2rem 0 0.7rem;">Service area</h2>
+            <div class="badge-row">{d.serviceArea.map((a) => <span class="badge dim">{a}</span>)}</div>
+          </>
+        )}
+
+        <div class="src-box" style="margin-top: 2.2rem;">
+          <strong>Where this listing comes from</strong>
+          <p style="margin-top: 0.5rem;">
+            This is an independently compiled directory profile — not the business's own page. Every detail
+            traces to a public source:
+          </p>
+          <ul>
+            {d.sources.map((s) => <li>▸ <a href={s.url} rel="nofollow noopener" target="_blank">{s.label}</a></li>)}
+          </ul>
+          <p style="margin-top: 0.7rem;">
+            Something wrong or outdated? <a href="https://github.com/Ryan-Benson3/shoals-tree-pros/issues" target="_blank" rel="noopener">Send a correction</a> — or
+            the owner can <a href="/about/#claim">claim this listing</a> free.
+          </p>
+        </div>
+      </div>
+
+      <aside class="profile-facts">
+        {hasPhone ? (
+          <div>
+            <p class="lbl">Phone</p>
+            <p class="val" style="font-size: 1.3rem;"><a href={`tel:${tel}`}>{d.phone}</a></p>
+          </div>
+        ) : (
+          <div>
+            <p class="lbl">Contact</p>
+            <p class="val">No public phone published — see <a href={d.sourceUrl} rel="nofollow noopener" target="_blank">source listing</a></p>
+          </div>
+        )}
+        {d.address && (
+          <div>
+            <p class="lbl">Address</p>
+            <p class="val">{d.address}<br />{d.city}, {d.state} {d.zip}</p>
+          </div>
+        )}
+        {d.website && (
+          <div>
+            <p class="lbl">Website</p>
+            <p class="val"><a href={d.website} rel="nofollow noopener" target="_blank">{d.website.replace(/^https?:\/\//, '').replace(/\/$/, '')}</a></p>
+          </div>
+        )}
+        {d.facebook && (
+          <div>
+            <p class="lbl">Facebook</p>
+            <p class="val"><a href={d.facebook} rel="nofollow noopener" target="_blank">Facebook page</a></p>
+          </div>
+        )}
+        {d.reviewCount > 0 && (
+          <div>
+            <p class="lbl">Public rating</p>
+            <p class="val">{'★'.repeat(Math.round(d.rating))}{'☆'.repeat(5 - Math.round(d.rating))} {d.rating.toFixed(1)} · {d.reviewCount} reviews{d.ratingSource ? ` (${d.ratingSource})` : ''}</p>
+          </div>
+        )}
+        {hasPhone && <a class="btn btn-primary" style="justify-content: center;" href={`tel:${tel}`}>Call {d.name.split(' ')[0]}</a>}
+      </aside>
+    </div>
+  </section>
+
+  {others.length > 0 && (
+    <section class="wrap">
+      <div class="group-head"><h2>Other crews near {d.city}</h2><span class="count">{others.length}</span></div>
+      <div class="cards-grid">{others.map((b) => <BusinessCard biz={b} />)}</div>
+    </section>
+  )}
+</Layout>

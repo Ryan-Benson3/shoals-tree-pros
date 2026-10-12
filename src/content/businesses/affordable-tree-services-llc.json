@@ -1,0 +1,30 @@
+{
+  "name": "Affordable Tree Services LLC",
+  "phone": "(256) 577-7369",
+  "address": "1313 Old Lee Hwy",
+  "city": "Tuscumbia",
+  "citySlug": "tuscumbia",
+  "county": "Colbert",
+  "state": "AL",
+  "zip": "35674",
+  "website": "https://www.byebyetree.com",
+  "facebook": "https://www.facebook.com/AffordableTreeServicesLlc/",
+  "email": "",
+  "rating": 4.7,
+  "reviewCount": 0,
+  "ratingSource": "Google (via directory data)",
+  "services": ["tree-trimming", "stump-grinding", "tree-removal", "storm-cleanup", "emergency", "lot-clearing", "crane"],
+  "serviceArea": ["Florence", "Killen", "Cherokee", "Tuscumbia", "Muscle Shoals"],
+  "yearsInBusiness": 15,
+  "insuredClaim": "Claims licensed & insured with workers comp (per third-party directory listing)",
+  "certifiedClaim": "Site displays ISA and Alabama Urban Forestry Association logos; claims certified arborists",
+  "summary": "BBB-accredited (A+) since 2011 with two Colbert County locations. Full-service tree work including crane and no-impact removals, 24-hour storm response, land clearing, and municipal/utility right-of-way work.",
+  "confidence": "provider-verified",
+  "sourceLabel": "byebyetree.com",
+  "sourceUrl": "https://www.byebyetree.com/",
+  "sources": [
+    { "label": "Company website", "url": "https://www.byebyetree.com/" },
+    { "label": "BBB profile (A+ accredited)", "url": "https://www.bbb.org/us/al/tuscumbia/profile/tree-service/affordable-tree-services-llc-0513-900124435" },
+    { "label": "Facebook page", "url": "https://www.facebook.com/AffordableTreeServicesLlc/" }
+  ]
+}

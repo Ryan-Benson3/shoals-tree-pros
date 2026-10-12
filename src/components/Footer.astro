@@ -1,0 +1,51 @@
+---
+import { cities } from '../data/cities';
+import { coreServices } from '../data/services';
+
+const year = new Date().getFullYear();
+const repo = 'https://github.com/Ryan-Benson3/shoals-tree-pros';
+---
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-cols">
+      <div>
+        <h4>Cities</h4>
+        <ul>
+          {cities.map((c) => (
+            <li><a href={`/alabama/${c.slug}/`}>Tree services in {c.name}</a></li>
+          ))}
+        </ul>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <ul>
+          {coreServices.map((s) => (
+            <li><a href={`/alabama/florence/${s.slug}/`}>{s.name}</a></li>
+          ))}
+          <li><a href="/tools/stump-grinding-cost/">Stump grinding cost guide</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>This site</h4>
+        <ul>
+          <li><a href="/about/">About &amp; how listings work</a></li>
+          <li><a href="/about/#claim">Add or claim a listing</a></li>
+          <li><a href={`${repo}/issues`}>Report a correction</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-inner">
+      <p class="fine">
+        Shoals Tree Pros is an independent directory compiled from public sources. We are not affiliated with the
+        businesses listed, and listing order is not paid placement. Details change — confirm hours, services, and
+        insurance directly with any crew before hiring. © {year} Shoals Tree Pros.
+      </p>
+    </div>
+  </div>
+</footer>
+
+<div class="bottom-bar" role="navigation" aria-label="Mobile quick actions">
+  <a class="btn btn-primary btn-sm" href="/#pros">Browse pros</a>
+  <a class="btn btn-ghost btn-sm top" href="#top">Top ↑</a>
+</div>

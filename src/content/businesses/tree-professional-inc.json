@@ -1,0 +1,31 @@
+{
+  "name": "Tree Professional, Inc.",
+  "phone": "(256) 665-2162",
+  "address": "35300 County Road 8",
+  "city": "Florence",
+  "citySlug": "florence",
+  "county": "Lauderdale",
+  "state": "AL",
+  "zip": "35634",
+  "website": "https://www.treeproinc.com",
+  "facebook": "",
+  "email": "",
+  "rating": 4.8,
+  "reviewCount": 186,
+  "ratingSource": "Google (via Birdeye)",
+  "services": ["tree-trimming", "stump-grinding", "tree-removal", "storm-cleanup", "emergency"],
+  "serviceArea": ["Florence", "Muscle Shoals", "Sheffield", "Tuscumbia", "Athens", "Rogersville", "Moulton", "Russellville", "Waterloo", "Lexington"],
+  "yearsInBusiness": 12,
+  "insuredClaim": "",
+  "certifiedClaim": "",
+  "summary": "Founded 2014, Tree Professional is one of the Shoals' largest tree operations — removal, pruning, stump grinding, and 24/7 emergency storm service, plus commercial vegetation management across AL/MS/AR/TN. Registered interstate carrier (USDOT 3078631).",
+  "confidence": "provider-verified",
+  "sourceLabel": "treeproinc.com",
+  "sourceUrl": "https://www.treeproinc.com/",
+  "sources": [
+    { "label": "Company website", "url": "https://www.treeproinc.com/" },
+    { "label": "Stump grinding page", "url": "https://www.treeproinc.com/stump-grinding" },
+    { "label": "FMCSA carrier record (USDOT 3078631)", "url": "https://safer.fmcsa.dot.gov/query.asp?query_param=USDOT&query_string=3078631&query_type=queryCarrierSnapshot&searchtype=ANY" },
+    { "label": "Birdeye reviews (Google-sourced)", "url": "https://reviews.birdeye.com/tree-professional-inc-167533864141483" }
+  ]
+}

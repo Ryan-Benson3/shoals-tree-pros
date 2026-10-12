@@ -1,0 +1,15 @@
+{
+  "name": "shoals-tree-pros",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "Shoals Tree Pros — tree trimming and stump grinding directory for the Shoals, Alabama.",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "dependencies": {
+    "astro": "^7.2.6",
+    "@astrojs/sitemap": "^3.4.0"
+  }
+}

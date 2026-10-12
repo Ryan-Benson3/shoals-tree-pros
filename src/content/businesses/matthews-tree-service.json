@@ -1,0 +1,30 @@
+{
+  "name": "Matthews Tree Service",
+  "phone": "(256) 483-5918",
+  "address": "6090 County Road 33",
+  "city": "Killen",
+  "citySlug": "killen",
+  "county": "Lauderdale",
+  "state": "AL",
+  "zip": "35645",
+  "website": "https://matthewstreetrimmingservice.com/",
+  "facebook": "https://facebook.com/446595225385807",
+  "email": "",
+  "rating": 5.0,
+  "reviewCount": 0,
+  "ratingSource": "Google (via directory data)",
+  "services": ["tree-trimming", "stump-grinding", "tree-removal", "storm-cleanup", "emergency"],
+  "serviceArea": ["Killen", "Florence", "Lauderdale County", "North Alabama"],
+  "yearsInBusiness": 3,
+  "insuredClaim": "",
+  "certifiedClaim": "",
+  "summary": "Killen-based operation (BBB accredited since 2023) covering removal, stump grinding, pruning, and 24/7 storm cleanup across Lauderdale County. Publishes a clear pricing policy on its site.",
+  "confidence": "provider-verified",
+  "sourceLabel": "matthewstreetrimmingservice.com",
+  "sourceUrl": "https://matthewstreetrimmingservice.com/",
+  "sources": [
+    { "label": "Company website", "url": "https://matthewstreetrimmingservice.com/" },
+    { "label": "BBB accredited profile", "url": "https://www.bbb.org/us/al/killen/profile/tree-removal/matthews-tree-service-0513-900244455" },
+    { "label": "Facebook page", "url": "https://facebook.com/446595225385807" }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "name": "Shoals Tree Service",
+  "phone": "(256) 760-9000",
+  "address": "1013 Park St",
+  "city": "Florence",
+  "citySlug": "florence",
+  "county": "Lauderdale",
+  "state": "AL",
+  "zip": "35630",
+  "website": "",
+  "facebook": "",
+  "email": "",
+  "rating": 4.4,
+  "reviewCount": 13,
+  "ratingSource": "Google",
+  "services": ["tree-trimming", "stump-grinding", "tree-removal", "firewood"],
+  "serviceArea": ["Florence", "Lauderdale County"],
+  "yearsInBusiness": 0,
+  "insuredClaim": "",
+  "certifiedClaim": "",
+  "summary": "Long-standing Florence tree service (older listings also show 3380 County Road 7) handling tree work, stump removal, and firewood. Its former website is offline — phone is the reliable contact.",
+  "confidence": "directory-listed",
+  "sourceLabel": "BBB profile",
+  "sourceUrl": "https://www.bbb.org/us/al/florence/profile/tree-service/shoals-tree-service-0513-900078807",
+  "sources": [
+    { "label": "BBB profile", "url": "https://www.bbb.org/us/al/florence/profile/tree-service/shoals-tree-service-0513-900078807" },
+    { "label": "MapQuest listing", "url": "https://www.mapquest.com/us/alabama/shoals-tree-service-4905556" }
+  ]
+}

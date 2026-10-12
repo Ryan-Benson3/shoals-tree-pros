@@ -1,0 +1,30 @@
+{
+  "name": "All Green Tree Services",
+  "phone": "(256) 767-3519",
+  "address": "1702 Mars Hill Rd",
+  "city": "Florence",
+  "citySlug": "florence",
+  "county": "Lauderdale",
+  "state": "AL",
+  "zip": "35630",
+  "website": "",
+  "facebook": "",
+  "email": "",
+  "rating": 4.4,
+  "reviewCount": 0,
+  "ratingSource": "Google (via directory data)",
+  "services": ["tree-trimming", "stump-grinding", "tree-removal"],
+  "serviceArea": ["Florence", "Lauderdale County"],
+  "yearsInBusiness": 0,
+  "insuredClaim": "",
+  "certifiedClaim": "",
+  "summary": "Florence tree service for tree work and stump grinding. Heads-up: directory listings show conflicting phone numbers for this business — (256) 767-3519 is the most-cited, but confirm you've reached All Green when calling.",
+  "confidence": "needs-confirmation",
+  "sourceLabel": "Directory listings",
+  "sourceUrl": "https://www.claimspages.com/providers/all-green-tree-services-2567673519/",
+  "sources": [
+    { "label": "ClaimsPages provider listing", "url": "https://www.claimspages.com/providers/all-green-tree-services-2567673519/" },
+    { "label": "LocalTreeService.net listing", "url": "https://localtreeservice.net/Alabama/All-Green-Tree-Services-41325203975/" },
+    { "label": "MapQuest listing", "url": "https://www.mapquest.com/us/alabama/all-green-tree-services-4904038" }
+  ]
+}

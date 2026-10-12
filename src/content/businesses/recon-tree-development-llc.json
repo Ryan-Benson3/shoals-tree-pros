@@ -1,0 +1,28 @@
+{
+  "name": "Recon Tree & Development, LLC",
+  "phone": "(662) 279-5519",
+  "address": "",
+  "city": "Tuscumbia",
+  "citySlug": "tuscumbia",
+  "county": "Colbert",
+  "state": "AL",
+  "zip": "35674",
+  "website": "",
+  "facebook": "",
+  "email": "",
+  "rating": 0,
+  "reviewCount": 0,
+  "ratingSource": "",
+  "services": ["tree-trimming", "tree-removal"],
+  "serviceArea": ["Colbert County", "Lauderdale County", "North Alabama"],
+  "yearsInBusiness": 0,
+  "insuredClaim": "",
+  "certifiedClaim": "",
+  "summary": "Tuscumbia-based tree service listed with BBB covering tree services, pruning, and removal across Colbert, Lauderdale, and surrounding North Alabama counties. No public street address — serves the area.",
+  "confidence": "needs-confirmation",
+  "sourceLabel": "BBB profile",
+  "sourceUrl": "https://www.bbb.org/us/al/tuscumbia/profile/tree-service/recon-tree-development-llc-0513-900265271",
+  "sources": [
+    { "label": "BBB profile", "url": "https://www.bbb.org/us/al/tuscumbia/profile/tree-service/recon-tree-development-llc-0513-900265271" }
+  ]
+}

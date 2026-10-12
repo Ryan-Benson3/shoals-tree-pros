@@ -1,0 +1,28 @@
+{
+  "name": "T&R Landworkz & Hauling",
+  "phone": "(256) 577-3451",
+  "address": "",
+  "city": "Florence",
+  "citySlug": "florence",
+  "county": "Lauderdale",
+  "state": "AL",
+  "zip": "35630",
+  "website": "",
+  "facebook": "",
+  "email": "",
+  "rating": 0,
+  "reviewCount": 0,
+  "ratingSource": "",
+  "services": ["tree-trimming", "lot-clearing"],
+  "serviceArea": ["Florence", "Lauderdale County"],
+  "yearsInBusiness": 0,
+  "insuredClaim": "Claims family owned, licensed & insured (via MapQuest listing)",
+  "certifiedClaim": "",
+  "summary": "Florence-area family operation combining tree trimming with land clearing, excavation, grading, and hauling. Serves the area from a single listing — details need owner confirmation.",
+  "confidence": "needs-confirmation",
+  "sourceLabel": "MapQuest listing",
+  "sourceUrl": "https://www.mapquest.com/us/alabama/tr-landworkz-hauling-448846930",
+  "sources": [
+    { "label": "MapQuest listing", "url": "https://www.mapquest.com/us/alabama/tr-landworkz-hauling-448846930" }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "name": "Sledge Tree Service",
+  "phone": "(256) 760-0466",
+  "address": "141 E Lee Ave",
+  "city": "Florence",
+  "citySlug": "florence",
+  "county": "Lauderdale",
+  "state": "AL",
+  "zip": "35630",
+  "website": "",
+  "facebook": "",
+  "email": "",
+  "rating": 4.5,
+  "reviewCount": 4,
+  "ratingSource": "Google",
+  "services": ["tree-trimming"],
+  "serviceArea": ["Florence", "Lauderdale County"],
+  "yearsInBusiness": 0,
+  "insuredClaim": "",
+  "certifiedClaim": "",
+  "summary": "Robert Sledge's Florence tree service, listed in directories since around 2015 for ornamental tree and shrub work. No web presence — phone only.",
+  "confidence": "directory-listed",
+  "sourceLabel": "Directory listings",
+  "sourceUrl": "https://www.directionus.com/al/florence/sledge-tree-service",
+  "sources": [
+    { "label": "Directionus listing", "url": "https://www.directionus.com/al/florence/sledge-tree-service" },
+    { "label": "Alabama agricultural services directory", "url": "https://alabama.agricultural-services.org/4901-sledges_tree_service.htm" }
+  ]
+}

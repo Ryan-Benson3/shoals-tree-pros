@@ -1,0 +1,28 @@
+{
+  "name": "King Family Tree Care",
+  "phone": "(256) 980-4948",
+  "address": "1003 Annapolis Ave",
+  "city": "Sheffield",
+  "citySlug": "sheffield",
+  "county": "Colbert",
+  "state": "AL",
+  "zip": "35660",
+  "website": "",
+  "facebook": "",
+  "email": "",
+  "rating": 3.0,
+  "reviewCount": 5,
+  "ratingSource": "Google",
+  "services": ["tree-trimming", "tree-removal"],
+  "serviceArea": ["Sheffield", "Colbert County"],
+  "yearsInBusiness": 0,
+  "insuredClaim": "",
+  "certifiedClaim": "",
+  "summary": "Sheffield tree care listing — the only tree business found with a Sheffield street address. Listing claims 24-hour availability. Phone from a single aggregator source, so details need confirmation.",
+  "confidence": "needs-confirmation",
+  "sourceLabel": "Directory listing",
+  "sourceUrl": "https://exa.ai/library/place/xgztbq28cr6",
+  "sources": [
+    { "label": "Places directory listing", "url": "https://exa.ai/library/place/xgztbq28cr6" }
+  ]
+}

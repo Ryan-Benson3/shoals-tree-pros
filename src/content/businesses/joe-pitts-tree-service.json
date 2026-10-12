@@ -1,0 +1,30 @@
+{
+  "name": "Joe Pitts Tree Service",
+  "phone": "(256) 766-4867",
+  "address": "2360 County Road 16",
+  "city": "Florence",
+  "citySlug": "florence",
+  "county": "Lauderdale",
+  "state": "AL",
+  "zip": "35633",
+  "website": "",
+  "facebook": "https://www.facebook.com/p/Joe-Pitts-tree-service-100046975206703/",
+  "email": "",
+  "rating": 4.8,
+  "reviewCount": 0,
+  "ratingSource": "Google (via directory data)",
+  "services": ["tree-trimming", "stump-grinding", "tree-removal", "lot-clearing"],
+  "serviceArea": ["Florence", "Lauderdale County"],
+  "yearsInBusiness": 20,
+  "insuredClaim": "",
+  "certifiedClaim": "",
+  "summary": "Joe Pitts has run this Florence operation since at least 2006 (intrastate DOT authority since then). Trimming, removals, stump work, and land clearing — no website, reachable by phone or Facebook.",
+  "confidence": "directory-listed",
+  "sourceLabel": "BBB profile",
+  "sourceUrl": "https://www.bbb.org/us/al/florence/profile/tree-service/joe-pitts-tree-service-0513-23000001",
+  "sources": [
+    { "label": "BBB profile", "url": "https://www.bbb.org/us/al/florence/profile/tree-service/joe-pitts-tree-service-0513-23000001" },
+    { "label": "Facebook page", "url": "https://www.facebook.com/p/Joe-Pitts-tree-service-100046975206703/" },
+    { "label": "DOT carrier record", "url": "https://www.lanefinder.com/c/joe_pitts_tree_service/1477644" }
+  ]
+}
