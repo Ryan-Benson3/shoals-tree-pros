@@ -11,19 +11,38 @@
   "facebook": "",
   "email": "",
   "rating": 4.7,
-  "reviewCount": 0,
-  "ratingSource": "Google (via directory data)",
-  "services": ["storm-cleanup"],
-  "serviceArea": ["Florence", "Muscle Shoals", "Sheffield", "Tuscumbia", "Killen", "Rogersville", "Lexington", "Athens"],
+  "reviewCount": 58,
+  "ratingSource": "Google",
+  "services": [
+    "storm-cleanup"
+  ],
+  "serviceArea": [
+    "Florence",
+    "Muscle Shoals",
+    "Sheffield",
+    "Tuscumbia",
+    "Killen",
+    "Rogersville",
+    "Lexington",
+    "Athens"
+  ],
   "yearsInBusiness": 12,
   "insuredClaim": "",
   "certifiedClaim": "",
-  "summary": "National lawn-care and landscaping franchise (Neighborly) with a Muscle Shoals location since 2014 — primarily lawn and landscape work with seasonal and storm cleanup; not a specialist tree-removal crew.",
+  "summary": "National lawn-care and landscaping franchise (Neighborly) with a Muscle Shoals location since 2014 \u2014 primarily lawn and landscape work with seasonal and storm cleanup; not a specialist tree-removal crew.",
   "confidence": "provider-verified",
   "sourceLabel": "groundsguys.com",
   "sourceUrl": "https://www.groundsguys.com/locations/northwest-alabama/",
   "sources": [
-    { "label": "Franchise location page", "url": "https://www.groundsguys.com/locations/northwest-alabama/" },
-    { "label": "Muscle Shoals page", "url": "https://www.groundsguys.com/locations/alabama/muscle-shoals/" }
-  ]
+    {
+      "label": "Franchise location page",
+      "url": "https://www.groundsguys.com/locations/northwest-alabama/"
+    },
+    {
+      "label": "Muscle Shoals page",
+      "url": "https://www.groundsguys.com/locations/alabama/muscle-shoals/"
+    }
+  ],
+  "googleMapsUrl": "https://www.google.com/maps/place/The+Grounds+Guys+of+Northwest+Alabama/@34.7691901,-87.6508539,17z/data=!3m1!4b1!4m6!3m5!1s0x887d485b89629875:0x9544027be14a4e34!8m2!3d34.7691901!4d-87.6508539!16s%2Fg%2F11byp6szff?entry=ttu&g_ep=EgoyMDI2MTAxMS4wIKXMDSoASAFQAw%3D%3D",
+  "photoCredit": "Photos via <a href='https://www.google.com/maps/place/The+Grounds+Guys+of+Northwest+Alabama/@34.7691901,-87.6508539,17z/data=!3m1!4b1!4m6!3m5!1s0x887d485b89629875:0x9544027be14a4e34!8m2!3d34.7691901!4d-87.6508539!16s%2Fg%2F11byp6szff?entry=ttu&g_ep=EgoyMDI2MTAxMS4wIKXMDSoASAFQAw%3D%3D' target='_blank' rel='nofollow noopener'>The Grounds Guys of Northwest Alabama's Google Business Profile</a>"
 }

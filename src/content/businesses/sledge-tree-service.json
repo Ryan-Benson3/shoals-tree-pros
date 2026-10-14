@@ -13,17 +13,29 @@
   "rating": 4.5,
   "reviewCount": 4,
   "ratingSource": "Google",
-  "services": ["tree-trimming"],
-  "serviceArea": ["Florence", "Lauderdale County"],
+  "services": [
+    "tree-trimming"
+  ],
+  "serviceArea": [
+    "Florence",
+    "Lauderdale County"
+  ],
   "yearsInBusiness": 0,
   "insuredClaim": "",
   "certifiedClaim": "",
-  "summary": "Robert Sledge's Florence tree service, listed in directories since around 2015 for ornamental tree and shrub work. No web presence — phone only.",
+  "summary": "Robert Sledge's Florence tree service, listed in directories since around 2015 for ornamental tree and shrub work. No web presence \u2014 phone only.",
   "confidence": "directory-listed",
   "sourceLabel": "Directory listings",
   "sourceUrl": "https://www.directionus.com/al/florence/sledge-tree-service",
   "sources": [
-    { "label": "Directionus listing", "url": "https://www.directionus.com/al/florence/sledge-tree-service" },
-    { "label": "Alabama agricultural services directory", "url": "https://alabama.agricultural-services.org/4901-sledges_tree_service.htm" }
-  ]
+    {
+      "label": "Directionus listing",
+      "url": "https://www.directionus.com/al/florence/sledge-tree-service"
+    },
+    {
+      "label": "Alabama agricultural services directory",
+      "url": "https://alabama.agricultural-services.org/4901-sledges_tree_service.htm"
+    }
+  ],
+  "googleMapsUrl": "https://www.google.com/maps/place/Sledge+Tree+Services/@34.8262738,-87.6812793,17z/data=!3m1!4b1!4m6!3m5!1s0x887d4816db7605a3:0x2129913dec49a441!8m2!3d34.8262738!4d-87.6812793!16s%2Fg%2F1tjds2fd?entry=ttu&g_ep=EgoyMDI2MTAxMS4wIKXMDSoASAFQAw%3D%3D"
 }

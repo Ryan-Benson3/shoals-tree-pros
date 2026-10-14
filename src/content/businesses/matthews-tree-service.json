@@ -11,8 +11,8 @@
   "facebook": "https://facebook.com/446595225385807",
   "email": "",
   "rating": 5.0,
-  "reviewCount": 0,
-  "ratingSource": "Google (via directory data)",
+  "reviewCount": 2,
+  "ratingSource": "Google",
   "services": [
     "tree-trimming",
     "stump-grinding",
@@ -47,5 +47,6 @@
       "url": "https://facebook.com/446595225385807"
     }
   ],
-  "photoCredit": ""
+  "photoCredit": "Photos via <a href='https://www.google.com/maps/place/Matthews+Tree+Trimming+Service/@34.8645102,-87.4389788,17z/data=!3m1!4b1!4m6!3m5!1s0x8862c9feabbed205:0x48c4a4cfaafbfc22!8m2!3d34.8645102!4d-87.4389788!16s%2Fg%2F11x7mcs4ff?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI2MTAxMS4wIKXMDSoASAFQAw%3D%3D' target='_blank' rel='nofollow noopener'>Matthews Tree Service's Google Business Profile</a>",
+  "googleMapsUrl": "https://www.google.com/maps/place/Matthews+Tree+Trimming+Service/@34.8645102,-87.4389788,17z/data=!3m1!4b1!4m6!3m5!1s0x8862c9feabbed205:0x48c4a4cfaafbfc22!8m2!3d34.8645102!4d-87.4389788!16s%2Fg%2F11x7mcs4ff?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI2MTAxMS4wIKXMDSoASAFQAw%3D%3D"
 }

@@ -10,20 +10,35 @@
   "website": "",
   "facebook": "",
   "email": "",
-  "rating": 4.4,
-  "reviewCount": 13,
+  "rating": 4.1,
+  "reviewCount": 14,
   "ratingSource": "Google",
-  "services": ["tree-trimming", "stump-grinding", "tree-removal", "firewood"],
-  "serviceArea": ["Florence", "Lauderdale County"],
+  "services": [
+    "tree-trimming",
+    "stump-grinding",
+    "tree-removal",
+    "firewood"
+  ],
+  "serviceArea": [
+    "Florence",
+    "Lauderdale County"
+  ],
   "yearsInBusiness": 0,
   "insuredClaim": "",
   "certifiedClaim": "",
-  "summary": "Long-standing Florence tree service (older listings also show 3380 County Road 7) handling tree work, stump removal, and firewood. Its former website is offline — phone is the reliable contact.",
+  "summary": "Long-standing Florence tree service (older listings also show 3380 County Road 7) handling tree work, stump removal, and firewood. Its former website is offline \u2014 phone is the reliable contact.",
   "confidence": "directory-listed",
   "sourceLabel": "BBB profile",
   "sourceUrl": "https://www.bbb.org/us/al/florence/profile/tree-service/shoals-tree-service-0513-900078807",
   "sources": [
-    { "label": "BBB profile", "url": "https://www.bbb.org/us/al/florence/profile/tree-service/shoals-tree-service-0513-900078807" },
-    { "label": "MapQuest listing", "url": "https://www.mapquest.com/us/alabama/shoals-tree-service-4905556" }
-  ]
+    {
+      "label": "BBB profile",
+      "url": "https://www.bbb.org/us/al/florence/profile/tree-service/shoals-tree-service-0513-900078807"
+    },
+    {
+      "label": "MapQuest listing",
+      "url": "https://www.mapquest.com/us/alabama/shoals-tree-service-4905556"
+    }
+  ],
+  "googleMapsUrl": "https://www.google.com/maps/place/Shoals+Tree+Service/@34.7993223,-87.6604438,17z/data=!3m1!4b1!4m6!3m5!1s0x887d4854ff518bc7:0x1535381a0de3568c!8m2!3d34.7993223!4d-87.6604438!16s%2Fg%2F1vn198m5?entry=ttu&g_ep=EgoyMDI2MTAxMS4wIKXMDSoASAFQAw%3D%3D"
 }

@@ -10,9 +10,9 @@
   "website": "https://www.brinksforestproducts.com",
   "facebook": "",
   "email": "",
-  "rating": 0,
-  "reviewCount": 0,
-  "ratingSource": "",
+  "rating": 5.0,
+  "reviewCount": 1,
+  "ratingSource": "Google",
   "services": [
     "tree-trimming",
     "tree-removal",
@@ -25,7 +25,7 @@
   "yearsInBusiness": 0,
   "insuredClaim": "",
   "certifiedClaim": "",
-  "summary": "Florence outdoor services company and registered carrier (USDOT 3115087), connected to Brink's Forest Products — mulch and firewood supply alongside tree work.",
+  "summary": "Florence outdoor services company and registered carrier (USDOT 3115087), connected to Brink's Forest Products \u2014 mulch and firewood supply alongside tree work.",
   "confidence": "directory-listed",
   "sourceLabel": "Directory listings",
   "sourceUrl": "https://www.mapquest.com/us/alabama/brinks-outdoor-services-352781065",
@@ -43,5 +43,6 @@
       "url": "https://www.brinksforestproducts.com"
     }
   ],
-  "photoCredit": "Brand image from brinksforestproducts.com — <a href='https://www.brinksforestproducts.com' target='_blank' rel='nofollow noopener'>view source</a>"
+  "photoCredit": "Brand image from brinksforestproducts.com \u2014 <a href='https://www.brinksforestproducts.com' target='_blank' rel='nofollow noopener'>view source</a>",
+  "googleMapsUrl": "https://www.google.com/maps/place/Brink's+Outdoor+Services/@34.8286966,-87.6482481,17z/data=!3m1!4b1!4m6!3m5!1s0x887d49daaaaaaaab:0xed058aec51344062!8m2!3d34.8286966!4d-87.6482481!16s%2Fg%2F12625bgj4?entry=ttu&g_ep=EgoyMDI2MTAxMS4wIKXMDSoASAFQAw%3D%3D"
 }

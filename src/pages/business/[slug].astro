@@ -16,9 +16,14 @@ const site = Astro.site?.href ?? '';
 const tel = d.phone.replace(/[^0-9+]/g, '');
 const hasPhone = tel.length > 0;
 
-// Real photo from the business's own web presence, if we have one on file
+// Real photo on file: from the business's own website or its Google Business Profile
 const photoPath = `/images/profiles/${business.id}.jpg`;
 const hasPhoto = fs.existsSync(`public${photoPath}`);
+const gallery = [2, 3]
+  .map((n) => `/images/profiles/${business.id}-${n}.jpg`)
+  .filter((p) => fs.existsSync(`public${p}`));
+const fromGoogle = (d.photoCredit || '').includes('Google Business Profile');
+const photoOrigin = fromGoogle ? 'Google Business Profile' : 'website';
 const initials = d.name
   .split(/\s+/)
   .filter((w) => /^[A-Za-z0-9]/.test(w))
@@ -58,8 +63,10 @@ const jsonLd = [
     ...(d.address ? { address: { '@type': 'PostalAddress', streetAddress: d.address, addressLocality: d.city, addressRegion: d.state, postalCode: d.zip } } : { address: { '@type': 'PostalAddress', addressLocality: d.city, addressRegion: d.state } }),
     areaServed: d.serviceArea.length ? d.serviceArea : [d.city],
     ...(d.website ? { url: d.website } : {}),
-    ...(d.reviewCount > 0 ? { aggregateRating: { '@type': 'AggregateRating', ratingValue: d.rating, reviewCount: d.reviewCount } } : {}),
-    ...(hasPhoto ? { image: `${site.replace(/\/$/, '')}${photoPath}` } : {}),
+    ...(d.googleMapsUrl ? { hasMap: d.googleMapsUrl } : {}),
+    ...([d.website, d.facebook, d.googleMapsUrl].filter(Boolean).length ? { sameAs: [d.website, d.facebook, d.googleMapsUrl].filter(Boolean) } : {}),
+    ...(d.reviewCount > 0 ? { aggregateRating: { '@type': 'AggregateRating', ratingValue: d.rating, reviewCount: d.reviewCount, bestRating: 5 } } : {}),
+    ...(hasPhoto ? { image: [`${site.replace(/\/$/, '')}${photoPath}`, ...gallery.map((p) => `${site.replace(/\/$/, '')}${p}`)] } : {}),
     description: `Tree service listed on Shoals Tree Pros, an independent directory for the Shoals, Alabama. Details compiled from public sources — verify before hiring.`,
   },
   {
@@ -87,8 +94,15 @@ const jsonLd = [
       {hasPhoto ? (
         <div style="margin-top: 1.4rem; max-width: 720px;">
           <div class="biz-photo">
-            <img src={photoPath} alt={`${d.name} — image from the business's own website`} loading="lazy" />
+            <img src={photoPath} alt={`${d.name} — photo from the business's ${photoOrigin}`} loading="lazy" />
           </div>
+          {gallery.length > 0 && (
+            <div class="biz-gallery">
+              {gallery.map((p) => (
+                <div class="biz-photo sm"><img src={p} alt={`${d.name} — photo from their Google Business Profile`} loading="lazy" /></div>
+              ))}
+            </div>
+          )}
           <p class="photo-credit" set:html={d.photoCredit || `Image from ${d.name}'s own website — contact us if it should be updated.`} />
         </div>
       ) : (
@@ -96,12 +110,20 @@ const jsonLd = [
           <div class="biz-photo monogram" aria-hidden="true">
             <span class="letters">{initials.slice(0, 1)}<span class="accent">{initials.slice(1)}</span></span>
           </div>
-          <p class="photo-credit">No public photo on file — this business has no website we could pull from. Owners can <a href="/about/#claim">claim this listing</a> to add one.</p>
+          <p class="photo-credit">No public photo on file yet — we checked their website and Google profile. Owners can <a href="/about/#claim">claim this listing</a> to add one.</p>
         </div>
       )}
       <div class="badge-row" style="margin-top: 1rem;">
         {d.services.map((s) => <span class="badge svc">{serviceLabel(s)}</span>)}
       </div>
+      {d.reviewCount > 0 && (
+        <p class="gbp-row">
+          <span class="stars">{'★★★★★'.slice(0, Math.round(d.rating)) + '☆☆☆☆☆'.slice(0, 5 - Math.round(d.rating))}</span>
+          <strong>{d.rating.toFixed(1)}</strong>
+          <span class="cnt">{d.reviewCount} reviews on {d.ratingSource || 'Google'}</span>
+          {d.googleMapsUrl && <a href={d.googleMapsUrl} rel="nofollow noopener" target="_blank">Read reviews on Google Maps →</a>}
+        </p>
+      )}
       <p class="lede">{d.summary || `Tree service serving ${d.city} and the surrounding Shoals area.`}</p>
       <p style="margin-top: 1.2rem;">
         <span class={`confidence-chip ${conf.cls}`}><span class="dot"></span>{conf.label}</span>

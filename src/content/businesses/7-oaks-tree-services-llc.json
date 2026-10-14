@@ -10,21 +10,40 @@
   "website": "https://www.7oakstreeservices.com/",
   "facebook": "",
   "email": "blakee24@aol.com",
-  "rating": 0,
-  "reviewCount": 0,
-  "ratingSource": "",
-  "services": ["tree-trimming", "tree-removal"],
-  "serviceArea": ["Russellville", "Florence", "Muscle Shoals", "Franklin County"],
+  "rating": 5.0,
+  "reviewCount": 6,
+  "ratingSource": "Google",
+  "services": [
+    "tree-trimming",
+    "tree-removal"
+  ],
+  "serviceArea": [
+    "Russellville",
+    "Florence",
+    "Muscle Shoals",
+    "Franklin County"
+  ],
   "yearsInBusiness": 0,
   "insuredClaim": "",
   "certifiedClaim": "",
-  "summary": "Russellville-based tree service (Franklin County, just south of the Shoals) with dedicated service pages for Florence and Muscle Shoals — removal and trimming. Email-first contact.",
+  "summary": "Russellville-based tree service (Franklin County, just south of the Shoals) with dedicated service pages for Florence and Muscle Shoals \u2014 removal and trimming. Email-first contact.",
   "confidence": "provider-verified",
   "sourceLabel": "7oakstreeservices.com",
   "sourceUrl": "https://www.7oakstreeservices.com/",
   "sources": [
-    { "label": "Company website", "url": "https://www.7oakstreeservices.com/" },
-    { "label": "Florence service page", "url": "https://www.7oakstreeservices.com/florence--al" },
-    { "label": "Muscle Shoals service page", "url": "https://www.7oakstreeservices.com/muscle-shoals--al" }
-  ]
+    {
+      "label": "Company website",
+      "url": "https://www.7oakstreeservices.com/"
+    },
+    {
+      "label": "Florence service page",
+      "url": "https://www.7oakstreeservices.com/florence--al"
+    },
+    {
+      "label": "Muscle Shoals service page",
+      "url": "https://www.7oakstreeservices.com/muscle-shoals--al"
+    }
+  ],
+  "googleMapsUrl": "https://www.google.com/maps/place/7+Oaks+Tree+Service/@34.5078726,-87.7286431,17z/data=!3m1!4b1!4m6!3m5!1s0x887d5867b9585615:0x8c9879b3078440f4!8m2!3d34.5078726!4d-87.7286431!16s%2Fg%2F11vqt40lnt?entry=ttu&g_ep=EgoyMDI2MTAxMS4wIKXMDSoASAFQAw%3D%3D",
+  "photoCredit": "Photos via <a href='https://www.google.com/maps/place/7+Oaks+Tree+Service/@34.5078726,-87.7286431,17z/data=!3m1!4b1!4m6!3m5!1s0x887d5867b9585615:0x8c9879b3078440f4!8m2!3d34.5078726!4d-87.7286431!16s%2Fg%2F11vqt40lnt?entry=ttu&g_ep=EgoyMDI2MTAxMS4wIKXMDSoASAFQAw%3D%3D' target='_blank' rel='nofollow noopener'>7 Oaks Tree Services LLC's Google Business Profile</a>"
 }

@@ -10,19 +10,31 @@
   "website": "",
   "facebook": "",
   "email": "",
-  "rating": 0,
-  "reviewCount": 0,
-  "ratingSource": "",
-  "services": ["tree-trimming", "tree-removal"],
-  "serviceArea": ["Colbert County", "Lauderdale County", "North Alabama"],
+  "rating": 4.8,
+  "reviewCount": 24,
+  "ratingSource": "Google",
+  "services": [
+    "tree-trimming",
+    "tree-removal"
+  ],
+  "serviceArea": [
+    "Colbert County",
+    "Lauderdale County",
+    "North Alabama"
+  ],
   "yearsInBusiness": 0,
   "insuredClaim": "",
   "certifiedClaim": "",
-  "summary": "Tuscumbia-based tree service listed with BBB covering tree services, pruning, and removal across Colbert, Lauderdale, and surrounding North Alabama counties. No public street address — serves the area.",
+  "summary": "Tuscumbia-based tree service listed with BBB covering tree services, pruning, and removal across Colbert, Lauderdale, and surrounding North Alabama counties. No public street address \u2014 serves the area.",
   "confidence": "needs-confirmation",
   "sourceLabel": "BBB profile",
   "sourceUrl": "https://www.bbb.org/us/al/tuscumbia/profile/tree-service/recon-tree-development-llc-0513-900265271",
   "sources": [
-    { "label": "BBB profile", "url": "https://www.bbb.org/us/al/tuscumbia/profile/tree-service/recon-tree-development-llc-0513-900265271" }
-  ]
+    {
+      "label": "BBB profile",
+      "url": "https://www.bbb.org/us/al/tuscumbia/profile/tree-service/recon-tree-development-llc-0513-900265271"
+    }
+  ],
+  "googleMapsUrl": "https://www.google.com/maps/place/Recon+Tree+%26+Development,+LLC/@33.40905,-86.6509545,7z/data=!3m1!4b1!4m6!3m5!1s0x246b322499e4e651:0x7451021864373ca2!8m2!3d33.40905!4d-86.6509546!16s%2Fg%2F11rh_nq88l?entry=ttu&g_ep=EgoyMDI2MTAxMS4wIKXMDSoASAFQAw%3D%3D",
+  "photoCredit": "Photos via <a href='https://www.google.com/maps/place/Recon+Tree+%26+Development,+LLC/@33.40905,-86.6509545,7z/data=!3m1!4b1!4m6!3m5!1s0x246b322499e4e651:0x7451021864373ca2!8m2!3d33.40905!4d-86.6509546!16s%2Fg%2F11rh_nq88l?entry=ttu&g_ep=EgoyMDI2MTAxMS4wIKXMDSoASAFQAw%3D%3D' target='_blank' rel='nofollow noopener'>Recon Tree & Development, LLC's Google Business Profile</a>"
 }

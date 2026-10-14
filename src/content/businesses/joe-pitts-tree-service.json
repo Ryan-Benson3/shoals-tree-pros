@@ -11,20 +11,38 @@
   "facebook": "https://www.facebook.com/p/Joe-Pitts-tree-service-100046975206703/",
   "email": "",
   "rating": 4.8,
-  "reviewCount": 0,
-  "ratingSource": "Google (via directory data)",
-  "services": ["tree-trimming", "stump-grinding", "tree-removal", "lot-clearing"],
-  "serviceArea": ["Florence", "Lauderdale County"],
+  "reviewCount": 8,
+  "ratingSource": "Google",
+  "services": [
+    "tree-trimming",
+    "stump-grinding",
+    "tree-removal",
+    "lot-clearing"
+  ],
+  "serviceArea": [
+    "Florence",
+    "Lauderdale County"
+  ],
   "yearsInBusiness": 20,
   "insuredClaim": "",
   "certifiedClaim": "",
-  "summary": "Joe Pitts has run this Florence operation since at least 2006 (intrastate DOT authority since then). Trimming, removals, stump work, and land clearing — no website, reachable by phone or Facebook.",
+  "summary": "Joe Pitts has run this Florence operation since at least 2006 (intrastate DOT authority since then). Trimming, removals, stump work, and land clearing \u2014 no website, reachable by phone or Facebook.",
   "confidence": "directory-listed",
   "sourceLabel": "BBB profile",
   "sourceUrl": "https://www.bbb.org/us/al/florence/profile/tree-service/joe-pitts-tree-service-0513-23000001",
   "sources": [
-    { "label": "BBB profile", "url": "https://www.bbb.org/us/al/florence/profile/tree-service/joe-pitts-tree-service-0513-23000001" },
-    { "label": "Facebook page", "url": "https://www.facebook.com/p/Joe-Pitts-tree-service-100046975206703/" },
-    { "label": "DOT carrier record", "url": "https://www.lanefinder.com/c/joe_pitts_tree_service/1477644" }
-  ]
+    {
+      "label": "BBB profile",
+      "url": "https://www.bbb.org/us/al/florence/profile/tree-service/joe-pitts-tree-service-0513-23000001"
+    },
+    {
+      "label": "Facebook page",
+      "url": "https://www.facebook.com/p/Joe-Pitts-tree-service-100046975206703/"
+    },
+    {
+      "label": "DOT carrier record",
+      "url": "https://www.lanefinder.com/c/joe_pitts_tree_service/1477644"
+    }
+  ],
+  "googleMapsUrl": "https://www.google.com/maps/place/Joe+Pitts+Tree+Services/@34.8581247,-87.7748778,17z/data=!3m1!4b1!4m6!3m5!1s0x887d38b4a0b38953:0x357f7eb522717763!8m2!3d34.8581247!4d-87.7748778!16s%2Fg%2F1v0lljvb?entry=ttu&g_ep=EgoyMDI2MTAxMS4wIKXMDSoASAFQAw%3D%3D"
 }

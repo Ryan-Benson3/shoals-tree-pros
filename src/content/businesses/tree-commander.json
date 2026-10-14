@@ -11,20 +11,37 @@
   "facebook": "",
   "email": "",
   "rating": 4.7,
-  "reviewCount": 47,
-  "ratingSource": "Birdeye",
-  "services": ["tree-trimming", "tree-removal"],
-  "serviceArea": ["Florence", "Lauderdale County"],
+  "reviewCount": 40,
+  "ratingSource": "Google",
+  "services": [
+    "tree-trimming",
+    "tree-removal"
+  ],
+  "serviceArea": [
+    "Florence",
+    "Lauderdale County"
+  ],
   "yearsInBusiness": 0,
   "insuredClaim": "",
   "certifiedClaim": "",
-  "summary": "Florence tree service with one of the strongest review footprints in the Shoals — 4.7 stars across 47 reviews — covering removals, trimming, and maintenance. Reviews mention senior discounts. No website; phone only.",
+  "summary": "Florence tree service with one of the strongest review footprints in the Shoals \u2014 4.7 stars across 47 reviews \u2014 covering removals, trimming, and maintenance. Reviews mention senior discounts. No website; phone only.",
   "confidence": "directory-listed",
   "sourceLabel": "Birdeye reviews",
   "sourceUrl": "https://reviews.birdeye.com/tree-commander-170490295204293",
   "sources": [
-    { "label": "Birdeye reviews (4.7★, 47 reviews)", "url": "https://reviews.birdeye.com/tree-commander-170490295204293" },
-    { "label": "Chamber of Commerce listing", "url": "https://www.chamberofcommerce.com/business-directory/alabama/florence/tree-service/2023269168-tree-commander" },
-    { "label": "MapQuest listing", "url": "https://www.mapquest.com/us/alabama/tree-commander-454261519" }
-  ]
+    {
+      "label": "Birdeye reviews (4.7\u2605, 47 reviews)",
+      "url": "https://reviews.birdeye.com/tree-commander-170490295204293"
+    },
+    {
+      "label": "Chamber of Commerce listing",
+      "url": "https://www.chamberofcommerce.com/business-directory/alabama/florence/tree-service/2023269168-tree-commander"
+    },
+    {
+      "label": "MapQuest listing",
+      "url": "https://www.mapquest.com/us/alabama/tree-commander-454261519"
+    }
+  ],
+  "googleMapsUrl": "https://www.google.com/maps/place/Tree+Commander/@34.8872077,-87.6833549,17z/data=!3m1!4b1!4m6!3m5!1s0x887d37be7b8cf563:0x3019a71421dbc593!8m2!3d34.8872077!4d-87.6833549!16s%2Fg%2F11qb6b0h1x?entry=ttu&g_ep=EgoyMDI2MTAxMS4wIKXMDSoASAFQAw%3D%3D",
+  "photoCredit": "Photos via <a href='https://www.google.com/maps/place/Tree+Commander/@34.8872077,-87.6833549,17z/data=!3m1!4b1!4m6!3m5!1s0x887d37be7b8cf563:0x3019a71421dbc593!8m2!3d34.8872077!4d-87.6833549!16s%2Fg%2F11qb6b0h1x?entry=ttu&g_ep=EgoyMDI2MTAxMS4wIKXMDSoASAFQAw%3D%3D' target='_blank' rel='nofollow noopener'>Tree Commander's Google Business Profile</a>"
 }

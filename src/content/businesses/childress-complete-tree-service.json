@@ -13,18 +13,42 @@
   "rating": 0,
   "reviewCount": 0,
   "ratingSource": "",
-  "services": ["tree-trimming", "stump-grinding", "tree-removal", "lot-clearing", "storm-cleanup", "emergency"],
-  "serviceArea": ["Rogersville", "Lauderdale County", "West Limestone County", "Lawrence County", "South Tennessee"],
+  "services": [
+    "tree-trimming",
+    "stump-grinding",
+    "tree-removal",
+    "lot-clearing",
+    "storm-cleanup",
+    "emergency"
+  ],
+  "serviceArea": [
+    "Rogersville",
+    "Lauderdale County",
+    "West Limestone County",
+    "Lawrence County",
+    "South Tennessee"
+  ],
   "yearsInBusiness": 32,
   "insuredClaim": "Claims licensed & insured (via third-party listings)",
   "certifiedClaim": "",
-  "summary": "Family-run (Ron & Stacy Childress) since 1994 out of Rogersville — removals, stump grinding, lot clearing, forestry mulching, and storm response across Lauderdale and neighboring counties.",
+  "summary": "Family-run (Ron & Stacy Childress) since 1994 out of Rogersville \u2014 removals, stump grinding, lot clearing, forestry mulching, and storm response across Lauderdale and neighboring counties.",
   "confidence": "provider-verified",
   "sourceLabel": "childresscompletetreeservice.com",
   "sourceUrl": "https://www.childresscompletetreeservice.com/",
   "sources": [
-    { "label": "Company website", "url": "https://www.childresscompletetreeservice.com/" },
-    { "label": "About page (since 1994)", "url": "https://www.childresscompletetreeservice.com/about-us" },
-    { "label": "CitySquares listing", "url": "https://citysquares.com/b/childress-complete-tree-service-13899610" }
-  ]
+    {
+      "label": "Company website",
+      "url": "https://www.childresscompletetreeservice.com/"
+    },
+    {
+      "label": "About page (since 1994)",
+      "url": "https://www.childresscompletetreeservice.com/about-us"
+    },
+    {
+      "label": "CitySquares listing",
+      "url": "https://citysquares.com/b/childress-complete-tree-service-13899610"
+    }
+  ],
+  "googleMapsUrl": "https://www.google.com/maps/place/Childress+Complete+Tree+Service/@34.8699645,-87.706859,10z/data=!3m1!4b1!4m6!3m5!1s0x4e9e153dbb158a3b:0xb0a8bfd50a79a2f2!8m2!3d34.8699645!4d-87.706859!16s%2Fg%2F11x725lyj_?entry=ttu&g_ep=EgoyMDI2MTAxMS4wIKXMDSoASAFQAw%3D%3D",
+  "photoCredit": "Photos via <a href='https://www.google.com/maps/place/Childress+Complete+Tree+Service/@34.8699645,-87.706859,10z/data=!3m1!4b1!4m6!3m5!1s0x4e9e153dbb158a3b:0xb0a8bfd50a79a2f2!8m2!3d34.8699645!4d-87.706859!16s%2Fg%2F11x725lyj_?entry=ttu&g_ep=EgoyMDI2MTAxMS4wIKXMDSoASAFQAw%3D%3D' target='_blank' rel='nofollow noopener'>Childress Complete Tree Service's Google Business Profile</a>"
 }

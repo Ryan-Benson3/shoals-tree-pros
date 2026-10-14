@@ -20,7 +20,7 @@ const businesses = defineCollection({
     zip: z.string().default(''),
     website: z.string().default(''),
     facebook: z.string().default(''),
-    email: z.string().default(''),
+    googleMapsUrl: z.string().default(''),
     rating: z.number().min(0).max(5).default(0),
     reviewCount: z.number().int().min(0).default(0),
     ratingSource: z.string().default(''),

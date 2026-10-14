@@ -10,21 +10,39 @@
   "website": "",
   "facebook": "",
   "email": "",
-  "rating": 4.4,
-  "reviewCount": 0,
-  "ratingSource": "Google (via directory data)",
-  "services": ["tree-trimming", "stump-grinding", "tree-removal"],
-  "serviceArea": ["Florence", "Lauderdale County"],
+  "rating": 4.5,
+  "reviewCount": 17,
+  "ratingSource": "Google",
+  "services": [
+    "tree-trimming",
+    "stump-grinding",
+    "tree-removal"
+  ],
+  "serviceArea": [
+    "Florence",
+    "Lauderdale County"
+  ],
   "yearsInBusiness": 0,
   "insuredClaim": "",
   "certifiedClaim": "",
-  "summary": "Florence tree service for tree work and stump grinding. Heads-up: directory listings show conflicting phone numbers for this business — (256) 767-3519 is the most-cited, but confirm you've reached All Green when calling.",
+  "summary": "Florence tree service for tree work and stump grinding. Heads-up: directory listings show conflicting phone numbers for this business \u2014 (256) 767-3519 is the most-cited, but confirm you've reached All Green when calling.",
   "confidence": "needs-confirmation",
   "sourceLabel": "Directory listings",
   "sourceUrl": "https://www.claimspages.com/providers/all-green-tree-services-2567673519/",
   "sources": [
-    { "label": "ClaimsPages provider listing", "url": "https://www.claimspages.com/providers/all-green-tree-services-2567673519/" },
-    { "label": "LocalTreeService.net listing", "url": "https://localtreeservice.net/Alabama/All-Green-Tree-Services-41325203975/" },
-    { "label": "MapQuest listing", "url": "https://www.mapquest.com/us/alabama/all-green-tree-services-4904038" }
-  ]
+    {
+      "label": "ClaimsPages provider listing",
+      "url": "https://www.claimspages.com/providers/all-green-tree-services-2567673519/"
+    },
+    {
+      "label": "LocalTreeService.net listing",
+      "url": "https://localtreeservice.net/Alabama/All-Green-Tree-Services-41325203975/"
+    },
+    {
+      "label": "MapQuest listing",
+      "url": "https://www.mapquest.com/us/alabama/all-green-tree-services-4904038"
+    }
+  ],
+  "googleMapsUrl": "https://www.google.com/maps/place/All+Green+Tree+Services/@34.8555787,-87.6530451,17z/data=!3m1!4b1!4m6!3m5!1s0x887d36315046f845:0xb10b633345f4a207!8m2!3d34.8555787!4d-87.6530451!16s%2Fg%2F1td0bpt6?entry=ttu&g_ep=EgoyMDI2MTAxMS4wIKXMDSoASAFQAw%3D%3D",
+  "photoCredit": "Photos via <a href='https://www.google.com/maps/place/All+Green+Tree+Services/@34.8555787,-87.6530451,17z/data=!3m1!4b1!4m6!3m5!1s0x887d36315046f845:0xb10b633345f4a207!8m2!3d34.8555787!4d-87.6530451!16s%2Fg%2F1td0bpt6?entry=ttu&g_ep=EgoyMDI2MTAxMS4wIKXMDSoASAFQAw%3D%3D' target='_blank' rel='nofollow noopener'>All Green Tree Services's Google Business Profile</a>"
 }

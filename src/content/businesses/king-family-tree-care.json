@@ -13,16 +13,27 @@
   "rating": 3.0,
   "reviewCount": 5,
   "ratingSource": "Google",
-  "services": ["tree-trimming", "tree-removal"],
-  "serviceArea": ["Sheffield", "Colbert County"],
+  "services": [
+    "tree-trimming",
+    "tree-removal"
+  ],
+  "serviceArea": [
+    "Sheffield",
+    "Colbert County"
+  ],
   "yearsInBusiness": 0,
   "insuredClaim": "",
   "certifiedClaim": "",
-  "summary": "Sheffield tree care listing — the only tree business found with a Sheffield street address. Listing claims 24-hour availability. Phone from a single aggregator source, so details need confirmation.",
+  "summary": "Sheffield tree care listing \u2014 the only tree business found with a Sheffield street address. Listing claims 24-hour availability. Phone from a single aggregator source, so details need confirmation.",
   "confidence": "needs-confirmation",
   "sourceLabel": "Directory listing",
   "sourceUrl": "https://exa.ai/library/place/xgztbq28cr6",
   "sources": [
-    { "label": "Places directory listing", "url": "https://exa.ai/library/place/xgztbq28cr6" }
-  ]
+    {
+      "label": "Places directory listing",
+      "url": "https://exa.ai/library/place/xgztbq28cr6"
+    }
+  ],
+  "googleMapsUrl": "https://www.google.com/maps/place/King+Family+Tree+Care/@34.7682328,-87.6939604,17z/data=!3m1!4b1!4m6!3m5!1s0x887d48a6c870d2a9:0x37f560ffee005bf2!8m2!3d34.7682328!4d-87.6939604!16s%2Fg%2F11d_wjq52m?entry=ttu&g_ep=EgoyMDI2MTAxMS4wIKXMDSoASAFQAw%3D%3D",
+  "photoCredit": "Photos via <a href='https://www.google.com/maps/place/King+Family+Tree+Care/@34.7682328,-87.6939604,17z/data=!3m1!4b1!4m6!3m5!1s0x887d48a6c870d2a9:0x37f560ffee005bf2!8m2!3d34.7682328!4d-87.6939604!16s%2Fg%2F11d_wjq52m?entry=ttu&g_ep=EgoyMDI2MTAxMS4wIKXMDSoASAFQAw%3D%3D' target='_blank' rel='nofollow noopener'>King Family Tree Care's Google Business Profile</a>"
 }

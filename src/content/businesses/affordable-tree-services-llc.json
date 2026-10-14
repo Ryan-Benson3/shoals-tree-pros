@@ -11,8 +11,8 @@
   "facebook": "https://www.facebook.com/AffordableTreeServicesLlc/",
   "email": "",
   "rating": 4.7,
-  "reviewCount": 0,
-  "ratingSource": "Google (via directory data)",
+  "reviewCount": 182,
+  "ratingSource": "Google",
   "services": [
     "tree-trimming",
     "stump-grinding",
@@ -50,5 +50,6 @@
       "url": "https://www.facebook.com/AffordableTreeServicesLlc/"
     }
   ],
-  "photoCredit": "Image from byebyetree.com — <a href='https://www.byebyetree.com/' target='_blank' rel='nofollow noopener'>view source</a>"
+  "photoCredit": "Image from byebyetree.com \u2014 <a href='https://www.byebyetree.com/' target='_blank' rel='nofollow noopener'>view source</a>",
+  "googleMapsUrl": "https://www.google.com/maps/place/Affordable+Tree+Service+Inc/@34.7122042,-87.7245776,17z/data=!3m1!4b1!4m6!3m5!1s0x887d6e7ffe5c1f7f:0x89caf5bee81580f5!8m2!3d34.7122042!4d-87.7245776!16s%2Fg%2F1264pwz_m?entry=ttu&g_ep=EgoyMDI2MTAxMS4wIKXMDSoASAFQAw%3D%3D"
 }

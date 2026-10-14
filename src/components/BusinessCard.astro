@@ -1,4 +1,5 @@
 ---
+import fs from 'node:fs';
 import { serviceLabel } from '../lib/biz';
 
 interface Biz {
@@ -10,6 +11,7 @@ interface Biz {
     state: string;
     county: string;
     website: string;
+    googleMapsUrl: string;
     rating: number;
     reviewCount: number;
     ratingSource: string;
@@ -32,15 +34,31 @@ const conf =
 const stars = '★★★★★'.slice(0, Math.round(biz.data.rating)) + '☆☆☆☆☆'.slice(0, 5 - Math.round(biz.data.rating));
 const tel = biz.data.phone.replace(/[^0-9+]/g, '');
 const hasPhone = tel.length > 0;
+
+const thumbPath = `/images/profiles/${biz.id}.jpg`;
+const hasThumb = fs.existsSync(`public${thumbPath}`);
+const initials = biz.data.name
+  .split(/\s+/)
+  .filter((w) => /^[A-Za-z0-9]/.test(w))
+  .slice(0, 2)
+  .map((w) => w[0].toUpperCase())
+  .join('');
 ---
 
 <article class="biz-card">
   <div class="top">
-    <div>
-      <h3><a href={`/business/${biz.id}/`}>{biz.data.name}</a></h3>
-      <div class="loc">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-        {biz.data.city}, {biz.data.state} · {biz.data.county} County
+    <div class="lead">
+      {hasThumb ? (
+        <div class="thumb"><img src={thumbPath} alt="" loading="lazy" width="62" height="62" /></div>
+      ) : (
+        <div class="thumb" aria-hidden="true"><span class="letters">{initials.slice(0, 1)}<span class="accent">{initials.slice(1)}</span></span></div>
+      )}
+      <div>
+        <h3><a href={`/business/${biz.id}/`}>{biz.data.name}</a></h3>
+        <div class="loc">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+          {biz.data.city}, {biz.data.state} · {biz.data.county} County
+        </div>
       </div>
     </div>
     <span class={`confidence-chip ${conf.cls}`}><span class="dot"></span>{conf.label}</span>
@@ -52,7 +70,12 @@ const hasPhone = tel.length > 0;
   </div>
 
   <div class="row2">
-    {biz.data.rating > 0 ? (
+    {biz.data.rating > 0 && biz.data.googleMapsUrl ? (
+      <a class="rating" href={biz.data.googleMapsUrl} rel="nofollow noopener" target="_blank" title="See reviews on Google Maps">
+        <span class="stars">{stars}</span> {biz.data.rating.toFixed(1)}
+        {biz.data.reviewCount > 0 && <span class="cnt">({biz.data.reviewCount}{biz.data.ratingSource ? ' · ' + biz.data.ratingSource : ''})</span>}
+      </a>
+    ) : biz.data.rating > 0 ? (
       <span class="rating">
         <span class="stars">{stars}</span> {biz.data.rating.toFixed(1)}
         {biz.data.reviewCount > 0 && <span class="cnt">({biz.data.reviewCount}{biz.data.ratingSource ? ' · ' + biz.data.ratingSource : ''})</span>}

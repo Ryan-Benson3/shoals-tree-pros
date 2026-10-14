@@ -10,9 +10,9 @@
   "website": "https://www.treeproinc.com",
   "facebook": "",
   "email": "",
-  "rating": 4.8,
-  "reviewCount": 186,
-  "ratingSource": "Google (via Birdeye)",
+  "rating": 4.9,
+  "reviewCount": 257,
+  "ratingSource": "Google",
   "services": [
     "tree-trimming",
     "stump-grinding",
@@ -35,7 +35,7 @@
   "yearsInBusiness": 12,
   "insuredClaim": "",
   "certifiedClaim": "",
-  "summary": "Founded 2014, Tree Professional is one of the Shoals' largest tree operations — removal, pruning, stump grinding, and 24/7 emergency storm service, plus commercial vegetation management across AL/MS/AR/TN. Registered interstate carrier (USDOT 3078631).",
+  "summary": "Founded 2014, Tree Professional is one of the Shoals' largest tree operations \u2014 removal, pruning, stump grinding, and 24/7 emergency storm service, plus commercial vegetation management across AL/MS/AR/TN. Registered interstate carrier (USDOT 3078631).",
   "confidence": "provider-verified",
   "sourceLabel": "treeproinc.com",
   "sourceUrl": "https://www.treeproinc.com/",
@@ -57,5 +57,6 @@
       "url": "https://reviews.birdeye.com/tree-professional-inc-167533864141483"
     }
   ],
-  "photoCredit": "Image from treeproinc.com — <a href='https://www.treeproinc.com/' target='_blank' rel='nofollow noopener'>view source</a>"
+  "photoCredit": "Image from treeproinc.com \u2014 <a href='https://www.treeproinc.com/' target='_blank' rel='nofollow noopener'>view source</a>",
+  "googleMapsUrl": "https://www.google.com/maps/place/Tree+Professional,+Inc./@34.9708593,-87.5241489,17z/data=!3m1!4b1!4m6!3m5!1s0x8862cd4ee4c0697d:0xb0945ddd70e4268d!8m2!3d34.9708593!4d-87.5241489!16s%2Fg%2F11p76v5mdx?entry=ttu&g_ep=EgoyMDI2MTAxMS4wIKXMDSoASAFQAw%3D%3D"
 }

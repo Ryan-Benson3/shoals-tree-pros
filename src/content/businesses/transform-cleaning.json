@@ -10,9 +10,9 @@
   "website": "https://www.transformyourproperty.com",
   "facebook": "",
   "email": "",
-  "rating": 0,
-  "reviewCount": 0,
-  "ratingSource": "",
+  "rating": 5.0,
+  "reviewCount": 19,
+  "ratingSource": "Google",
   "services": [
     "tree-trimming",
     "stump-grinding",
@@ -32,7 +32,7 @@
   "yearsInBusiness": 0,
   "insuredClaim": "Claims licensed & insured (per company website)",
   "certifiedClaim": "",
-  "summary": "Veteran co-owned Tuscumbia company blending tree work — removals, trimming, stump grinding, same-day storm response — with land clearing and pressure washing. All details self-reported on its own site.",
+  "summary": "Veteran co-owned Tuscumbia company blending tree work \u2014 removals, trimming, stump grinding, same-day storm response \u2014 with land clearing and pressure washing. All details self-reported on its own site.",
   "confidence": "provider-verified",
   "sourceLabel": "transformyourproperty.com",
   "sourceUrl": "https://www.transformyourproperty.com/",
@@ -46,5 +46,6 @@
       "url": "https://www.transformyourproperty.com/services/land-clearing"
     }
   ],
-  "photoCredit": ""
+  "photoCredit": "Photos via <a href='https://www.google.com/maps/place/Transform+Cleaning/@34.6915443,-87.7503949,17z/data=!3m1!4b1!4m6!3m5!1s0x4dc15ee9834e97bd:0xdffbd42192c251a5!8m2!3d34.6915443!4d-87.7503949!16s%2Fg%2F11lcr61s1v?entry=ttu&g_ep=EgoyMDI2MTAxMS4wIKXMDSoASAFQAw%3D%3D' target='_blank' rel='nofollow noopener'>Transform Cleaning & Tree Service's Google Business Profile</a>",
+  "googleMapsUrl": "https://www.google.com/maps/place/Transform+Cleaning/@34.6915443,-87.7503949,17z/data=!3m1!4b1!4m6!3m5!1s0x4dc15ee9834e97bd:0xdffbd42192c251a5!8m2!3d34.6915443!4d-87.7503949!16s%2Fg%2F11lcr61s1v?entry=ttu&g_ep=EgoyMDI2MTAxMS4wIKXMDSoASAFQAw%3D%3D"
 }
