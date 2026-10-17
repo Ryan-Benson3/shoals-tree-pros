@@ -1,9 +1,9 @@
 ---
 import { cities } from '../data/cities';
 import { coreServices } from '../data/services';
+import { contactHref } from '../data/site';
 
 const year = new Date().getFullYear();
-const repo = 'https://github.com/Ryan-Benson3/shoals-tree-pros';
 ---
 
 <footer class="site-footer">
@@ -31,7 +31,7 @@ const repo = 'https://github.com/Ryan-Benson3/shoals-tree-pros';
         <ul>
           <li><a href="/about/">About &amp; how listings work</a></li>
           <li><a href="/about/#claim">Add or claim a listing</a></li>
-          <li><a href={`${repo}/issues`}>Report a correction</a></li>
+          <li><a href={contactHref}>Report a correction</a></li>
         </ul>
       </div>
     </div>

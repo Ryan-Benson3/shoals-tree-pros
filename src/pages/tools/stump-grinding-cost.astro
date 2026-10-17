@@ -20,9 +20,7 @@ const jsonLd = [
   {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
-    mainEntity: faqsFor('service')
-      .filter((f) => f.q.toLowerCase().includes('cost') || f.q.toLowerCase().includes('grinding'))
-      .map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
+    mainEntity: faqsFor('service', 'stump-grinding').map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
   },
 ];
 ---
@@ -79,5 +77,5 @@ const jsonLd = [
     </div>
   </section>
 
-  <FaqBlock scope="service" heading="Stump grinding questions" />
+  <FaqBlock scope="service" service="stump-grinding" heading="Stump grinding questions" />
 </Layout>

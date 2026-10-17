@@ -154,7 +154,7 @@
       else if (d <= 24) { lo = 150; hi = 300; note = 'Medium stump — the most common residential job in the Shoals.'; }
       else if (d <= 36) { lo = 300; hi = 450; note = 'Large stump — heavier grinding head, slower work.'; }
       else { lo = 450; hi = 700; note = 'Extra-large stump — access and root spread push the price up.'; }
-      lo = Math.round(lo * n * 0.9); hi = Math.round(hi * n * 0.95);
+      if (n > 1) { lo = Math.round(lo * n * 0.9); hi = Math.round(hi * n * 0.95); }
       out.textContent = `$${lo.toLocaleString()} – $${hi.toLocaleString()}`;
       if (outNote) outNote.textContent = note + (n > 1 ? ` Multi-stump discount applied roughly — crews usually drop the per-stump price past three or four.` : '');
     };

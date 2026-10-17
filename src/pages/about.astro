@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { contactEmail, contactHref } from '../data/site';
 
 const title = 'About Shoals Tree Pros — How This Directory Works';
 const description =
@@ -68,7 +69,7 @@ const jsonLd = [
       <div class="proc">
         <div class="p-card">
           <h3>1. Send your details</h3>
-          <p>Open a request at our <a href="https://github.com/Ryan-Benson3/shoals-tree-pros/issues" target="_blank" rel="noopener">GitHub issues page</a> with your business name, phone, city, services, and website or Facebook link. Corrections to existing listings work the same way.</p>
+          <p>Email <a href={contactHref}>{contactEmail}</a> with your business name, phone, city, services, and website or Facebook link. Corrections to existing listings work the same way. On GitHub? You can also <a href="https://github.com/Ryan-Benson3/shoals-tree-pros/issues" target="_blank" rel="noopener">open an issue</a>.</p>
         </div>
         <div class="p-card">
           <h3>2. We verify against public info</h3>
@@ -99,7 +100,7 @@ const jsonLd = [
       <h2>Spot something <span class="hl">wrong</span>?</h2>
       <p>Listings drift out of date. If a number's dead or a crew's gone, tell us and it gets fixed or pulled.</p>
       <div class="cta-row">
-        <a class="btn btn-gold" href="https://github.com/Ryan-Benson3/shoals-tree-pros/issues" target="_blank" rel="noopener">Send a correction</a>
+        <a class="btn btn-gold" href={contactHref}>Send a correction</a>
         <a class="btn btn-ghost" href="/#pros">Browse the directory</a>
       </div>
     </div>

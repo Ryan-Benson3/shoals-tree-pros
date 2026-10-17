@@ -61,7 +61,7 @@ const jsonLd = [
   {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
-    mainEntity: faqsFor('service').map((f) => ({
+    mainEntity: faqsFor('service', service.slug).map((f) => ({
       '@type': 'Question',
       name: f.q,
       acceptedAnswer: { '@type': 'Answer', text: f.a },
@@ -138,5 +138,5 @@ const jsonLd = [
     </div>
   </section>
 
-  <FaqBlock scope="service" heading={`${label} questions`} />
+  <FaqBlock scope="service" service={service.slug} heading={`${label} questions`} />
 </Layout>

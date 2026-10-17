@@ -3,6 +3,7 @@ import Layout from '../../layouts/Layout.astro';
 import BusinessCard from '../../components/BusinessCard.astro';
 import { cityBySlug } from '../../data/cities';
 import { serviceLabel, allBusinesses, type BizEntry } from '../../lib/biz';
+import { contactHref } from '../../data/site';
 import fs from 'node:fs';
 
 export async function getStaticPaths() {
@@ -65,7 +66,6 @@ const jsonLd = [
     ...(d.website ? { url: d.website } : {}),
     ...(d.googleMapsUrl ? { hasMap: d.googleMapsUrl } : {}),
     ...([d.website, d.facebook, d.googleMapsUrl].filter(Boolean).length ? { sameAs: [d.website, d.facebook, d.googleMapsUrl].filter(Boolean) } : {}),
-    ...(d.reviewCount > 0 ? { aggregateRating: { '@type': 'AggregateRating', ratingValue: d.rating, reviewCount: d.reviewCount, bestRating: 5 } } : {}),
     ...(hasPhoto ? { image: [`${site.replace(/\/$/, '')}${photoPath}`, ...gallery.map((p) => `${site.replace(/\/$/, '')}${p}`)] } : {}),
     description: `Tree service listed on Shoals Tree Pros, an independent directory for the Shoals, Alabama. Details compiled from public sources — verify before hiring.`,
   },
@@ -91,10 +91,15 @@ const jsonLd = [
     <div class="wrap">
       <p class="kicker">{d.city}, {d.state} · {d.county} County</p>
       <h1>{d.name}</h1>
+      {hasPhone ? (
+        <p style="margin-top: 1rem;"><a class="btn btn-primary" href={`tel:${tel}`}>Call {d.phone}</a></p>
+      ) : d.sourceUrl && (
+        <p style="margin-top: 1rem;"><a class="btn btn-gold" href={d.sourceUrl} rel="nofollow noopener" target="_blank">See source listing</a></p>
+      )}
       {hasPhoto ? (
         <div style="margin-top: 1.4rem; max-width: 720px;">
           <div class="biz-photo">
-            <img src={photoPath} alt={`${d.name} — photo from the business's ${photoOrigin}`} loading="lazy" />
+            <img src={photoPath} alt={`${d.name} — photo from the business's ${photoOrigin}`} fetchpriority="high" />
           </div>
           {gallery.length > 0 && (
             <div class="biz-gallery">
@@ -159,7 +164,7 @@ const jsonLd = [
             {d.sources.map((s) => <li>▸ <a href={s.url} rel="nofollow noopener" target="_blank">{s.label}</a></li>)}
           </ul>
           <p style="margin-top: 0.7rem;">
-            Something wrong or outdated? <a href="https://github.com/Ryan-Benson3/shoals-tree-pros/issues" target="_blank" rel="noopener">Send a correction</a> — or
+            Something wrong or outdated? <a href={contactHref}>Send a correction</a> — or
             the owner can <a href="/about/#claim">claim this listing</a> free.
           </p>
         </div>
@@ -201,7 +206,7 @@ const jsonLd = [
             <p class="val">{'★'.repeat(Math.round(d.rating))}{'☆'.repeat(5 - Math.round(d.rating))} {d.rating.toFixed(1)} · {d.reviewCount} reviews{d.ratingSource ? ` (${d.ratingSource})` : ''}</p>
           </div>
         )}
-        {hasPhone && <a class="btn btn-primary" style="justify-content: center;" href={`tel:${tel}`}>Call {d.name.split(' ')[0]}</a>}
+        {hasPhone && <a class="btn btn-primary" style="justify-content: center;" href={`tel:${tel}`}>Call {d.phone}</a>}
       </aside>
     </div>
   </section>

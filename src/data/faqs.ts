@@ -1,4 +1,4 @@
-export type Faq = { q: string; a: string; scope: ('home' | 'city' | 'service')[] };
+export type Faq = { q: string; a: string; scope: ('home' | 'city' | 'service')[]; service?: 'tree-trimming' | 'stump-grinding' };
 
 /**
  * FAQ content. Answers stay honest: no invented local prices,
@@ -19,17 +19,17 @@ export const faqs: Faq[] = [
   {
     q: 'How much does stump grinding cost?',
     a: 'Published industry ranges put most residential stump grinding between roughly $100 and $400 per stump — small stumps at the low end, large or multiple stumps at the high end. Diameter, root spread, access, and how deep you want it ground all move the price. Shoals crews usually quote by the stump after seeing it, so two or three quick quotes is the reliable way to price yours. Try our stump cost estimator for a ballpark.',
-    scope: ['home', 'service'],
+    scope: ['home', 'service'], service: 'stump-grinding',
   },
   {
     q: "What's the difference between stump grinding and stump removal?",
     a: 'Grinding shreds the stump a few inches below the grass line and leaves the roots to rot naturally — fast, cheap, and you can sod over it within days. Full removal pulls the stump and root ball out with excavation, leaving a hole and a bigger mess. Most homeowners choose grinding; removal is mainly needed for new construction or replanting in the exact same spot.',
-    scope: ['home', 'service'],
+    scope: ['home', 'service'], service: 'stump-grinding',
   },
   {
     q: "When's the best time to trim trees in north Alabama?",
     a: 'Late winter, while trees are dormant, is the cleanest window for most species — oaks included, which should not be pruned during warm months because of oak wilt risk. Dead, broken, or hazardous limbs can and should come off any time of year. Avoid heavy trimming in the heat of summer.',
-    scope: ['home', 'city', 'service'],
+    scope: ['home', 'city', 'service'], service: 'tree-trimming',
   },
   {
     q: 'Do I need a permit to remove a tree in Florence or the Shoals cities?',
@@ -39,7 +39,7 @@ export const faqs: Faq[] = [
   {
     q: 'How can I tell if a tree is dangerous?',
     a: 'Watch for a new or increasing lean, large dead limbs in the crown, cracks in the trunk or major forks, mushrooms or fungus at the base, and raised or broken soil on one side of the root zone. Any one of these on a tree that could reach a house, car, or person is worth a professional look. Several crews in this directory offer assessments.',
-    scope: ['home', 'city'],
+    scope: ['home', 'city', 'service'], service: 'tree-trimming',
   },
   {
     q: 'What should a written tree-work estimate include?',
@@ -48,4 +48,4 @@ export const faqs: Faq[] = [
   },
 ];
 
-export const faqsFor = (scope: 'home' | 'city' | 'service') => faqs.filter((f) => f.scope.includes(scope));
+export const faqsFor = (scope: 'home' | 'city' | 'service', service?: string) => faqs.filter((f) => f.scope.includes(scope) && (!service || !f.service || f.service === service));

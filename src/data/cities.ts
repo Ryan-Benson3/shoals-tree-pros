@@ -20,8 +20,8 @@ export const cities: City[] = [
   {
     name: 'Muscle Shoals',
     slug: 'muscle-shoals',
-    county: 'Lauderdale',
-    blurb: 'Home of the world-famous recording studios, on the south side of the Tennessee River in Lauderdale County.',
+    county: 'Colbert',
+    blurb: 'Home of the world-famous recording studios, on the south side of the Tennessee River in Colbert County.',
     treeNote: 'A mix of established subdivisions and open lots — lot clearing and stump grinding are common calls here.',
   },
   {

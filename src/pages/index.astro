@@ -115,8 +115,8 @@ const jsonLd = [
       <p class="eyebrow">The directory</p>
       <h2>Every listed crew, by county</h2>
       <p>
-        Lauderdale County covers Florence, Muscle Shoals, Killen, and Rogersville. Colbert County covers
-        Sheffield and Tuscumbia. Cards show what each crew does and where the listing came from.
+        Lauderdale County covers Florence, Killen, and Rogersville. Colbert County covers Muscle Shoals, Sheffield, and
+        Tuscumbia. Cards show what each crew does and where the listing came from.
       </p>
     </div>
 
@@ -193,8 +193,8 @@ const jsonLd = [
           <div class="ico" aria-hidden="true">{s.icon}</div>
           <h3>{s.name}</h3>
           <p>{s.short}</p>
-          <a class="learn" href={`/alabama/florence/${s.core ? s.slug : 'tree-trimming'}/`}>
-            See crews &amp; details <span aria-hidden="true">→</span>
+          <a class="learn" href={s.core ? `/alabama/florence/${s.slug}/` : '#pros'}>
+            {s.core ? 'See crews & details' : 'Browse all crews'} <span aria-hidden="true">→</span>
           </a>
         </div>
       ))}
@@ -217,9 +217,7 @@ const jsonLd = [
     </div>
   </section>
 
-  <div class="wrap">
-    <FaqBlock scope="home" heading="Tree work questions, answered straight" />
-  </div>
+  <FaqBlock scope="home" heading="Tree work questions, answered straight" />
 
   <section class="wrap" style="padding-block: 1rem 4.5rem;">
     <div class="cta-box">
